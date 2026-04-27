@@ -4,107 +4,436 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; color: #222; line-height: 1.5; }
-        .header { background: #1a3b5c; color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 24px; font-weight: bold; }
-        .menu a { color: #fff; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .menu a:hover { text-decoration: underline; }
-        .hero { background: #f4f4f4; padding: 50px 20px; text-align: center; }
-        .hero h1 { font-size: 32px; margin-bottom: 20px; }
-        .contact-block { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 30px 0; }
-        .phone-box, .email-box, .telegram-box { background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 10px; min-width: 200px; }
-        .phone-box a { color: #1a3b5c; font-size: 20px; font-weight: bold; text-decoration: none; display: block; margin: 5px 0; }
-        .btn { display: inline-block; background: #f90; color: #fff; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin: 10px 5px; }
-        .btn-telegram { background: #08c; }
-        .regime { margin: 20px; font-size: 16px; text-align: center; }
-        .regime strong { color: #1a3b5c; }
-        .policy { background: #ffe; padding: 10px; margin: 20px; text-align: center; border-radius: 5px; }
-        .form-section { max-width: 500px; margin: 30px auto; padding: 20px; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 10px; }
-        .form-section h2 { text-align: center; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        .form-group textarea { resize: vertical; }
-        button[type="submit"] { background: #1a3b5c; color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; }
-        button[type="submit"]:hover { background: #0f2a40; }
-        footer { background: #1a3b5c; color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
-        footer a { color: #f90; text-decoration: none; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.5;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* === ТЁМНАЯ ТЕМА (по умолчанию) === */
+        .top-bar {
+            background: #111; padding: 12px 0; font-size: 15px; border-bottom: 1px solid #222;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .top-bar .phones a { color: #fff; text-decoration: none; margin-right: 20px; font-weight: bold; white-space: nowrap; }
+        .top-bar .phones a:hover { color: #ff8c00; }
+        .top-bar .info { display: flex; gap: 25px; flex-wrap: wrap; align-items: center; }
+        .top-bar .info span { color: #ccc; }
+        .top-bar .info i { color: #ff8c00; margin-right: 5px; }
+
+        .btn-orange {
+            display: inline-block; background: #ff8c00; color: #000; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s;
+            border: none; cursor: pointer; font-size: 16px;
+        }
+        .btn-orange:hover { background: #e67e00; transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent; border: 2px solid #ff8c00; color: #ff8c00;
+            padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-outline:hover { background: #ff8c00; color: #000; }
+
+        .main-header {
+            background: #000; padding: 15px 0; border-bottom: 1px solid #222;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        .logo .white { color: #fff; }
+        .logo .orange { color: #ff8c00; }
+        .menu { display: flex; flex-wrap: wrap; gap: 20px; }
+        .menu a {
+            color: #ccc; text-decoration: none; font-size: 16px; font-weight: 500;
+            transition: color 0.3s; white-space: nowrap;
+        }
+        .menu a:hover { color: #ff8c00; }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://i.ibb.co/PGbGPT5p/grok-image-1776798543221.jpg') center/cover no-repeat;
+            padding: 80px 0; text-align: left;
+        }
+        .hero .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .hero-left { flex: 1; min-width: 300px; }
+        .hero-left h1 { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-left .highlight { color: #ff8c00; }
+        .hero-left p { font-size: 18px; color: #bbb; margin-bottom: 30px; max-width: 500px; }
+        .hero-left .buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+        .hero-right { flex: 1; min-width: 300px; text-align: right; }
+        .hero-right img { max-width: 100%; border-radius: 10px; }
+
+        .section-title {
+            text-align: center; font-size: 36px; font-weight: 900; text-transform: uppercase;
+            margin-bottom: 50px; color: #fff;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 4px; background: #ff8c00;
+            margin: 15px auto 0;
+        }
+
+        .services { background: #0a0a0a; padding: 80px 0; transition: background 0.3s; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-card {
+            background: #111; padding: 40px 30px; border-radius: 8px; text-align: center;
+            border: 1px solid #222; transition: background 0.3s, border-color 0.3s;
+        }
+        .service-card:hover { border-color: #ff8c00; }
+        .service-icon { font-size: 40px; color: #ff8c00; margin-bottom: 25px; }
+        .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 20px; }
+        .service-card p { color: #aaa; font-size: 14px; }
+
+        .about { background: #000; padding: 80px 0; transition: background 0.3s; }
+        .about .container { display: flex; align-items: flex-start; gap: 50px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 280px; }
+        .about-text h2 { font-size: 32px; font-weight: 900; margin-bottom: 20px; color: #fff; }
+        .about-text p { color: #bbb; margin-bottom: 20px; font-size: 16px; }
+        .about-image { flex: 1; min-width: 280px; }
+        .about-image img { width: 100%; border-radius: 8px; border: 1px solid #333; }
+
+        .testimonials { background: #0a0a0a; padding: 80px 0; transition: background 0.3s; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .testimonial-card {
+            background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .testimonial-card .quote { font-style: italic; color: #ddd; margin-bottom: 20px; font-size: 15px; }
+        .author-info strong { display: block; color: #fff; font-size: 16px; }
+        .author-info span { color: #999; font-size: 13px; }
+        .rating { color: #ff8c00; margin-bottom: 12px; }
+
+        .contacts { background: #000; padding: 80px 0; transition: background 0.3s; }
+        .contact-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+        .contact-card {
+            background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;
+            min-width: 250px; text-align: center; transition: background 0.3s, border-color 0.3s;
+        }
+        .contact-card i { font-size: 30px; color: #ff8c00; margin-bottom: 15px; }
+        .contact-card a { color: #fff; text-decoration: none; font-size: 18px; font-weight: bold; display: block; margin: 8px 0; }
+        .contact-card .telegram-link { color: #0088cc; }
+        .contact-card .telegram-link i { color: #0088cc; }
+
+        .order-form { background: #000; padding: 80px 0; transition: background 0.3s; }
+        .form-wrapper {
+            max-width: 700px; margin: 0 auto; background: #111; padding: 40px;
+            border-radius: 8px; border: 1px solid #222; transition: background 0.3s, border-color 0.3s;
+        }
+        .form-wrapper h2 { text-align: center; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #ccc; font-weight: bold; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; background: #222; border: 1px solid #333;
+            border-radius: 6px; color: #fff; font-size: 16px; transition: background 0.3s, border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: #ff8c00; outline: none; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-wrapper .btn-orange { width: 100%; font-size: 18px; }
+
+        footer {
+            background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid #222;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        footer p { color: #888; margin-bottom: 10px; }
+        footer a { color: #ff8c00; text-decoration: none; }
+
+        /* === СВЕТЛАЯ ТЕМА === */
+        body.light-theme { background: #f5f5f5; color: #222; }
+        body.light-theme .top-bar { background: #fff; border-bottom: 1px solid #ddd; }
+        body.light-theme .top-bar .phones a { color: #222; }
+        body.light-theme .top-bar .info span { color: #555; }
+        body.light-theme .main-header { background: #fff; border-bottom: 1px solid #ddd; }
+        body.light-theme .menu a { color: #555; }
+        body.light-theme .menu a:hover { color: #ff8c00; }
+        body.light-theme .hero-left h1 { color: #111; }
+        body.light-theme .hero-left p { color: #333; }
+        body.light-theme .section-title { color: #111; }
+        body.light-theme .services { background: #fff; }
+        body.light-theme .service-card { background: #fafafa; border-color: #eee; }
+        body.light-theme .service-card h3 { color: #111; }
+        body.light-theme .service-card p { color: #444; }
+        body.light-theme .about { background: #fff; }
+        body.light-theme .about-text h2 { color: #111; }
+        body.light-theme .about-text p { color: #333; }
+        body.light-theme .testimonials { background: #fff; }
+        body.light-theme .testimonial-card { background: #fafafa; border-color: #eee; }
+        body.light-theme .testimonial-card .quote { color: #333; }
+        body.light-theme .author-info strong { color: #111; }
+        body.light-theme .author-info span { color: #555; }
+        body.light-theme .contacts { background: #fff; }
+        body.light-theme .contact-card { background: #fafafa; border-color: #eee; }
+        body.light-theme .contact-card a { color: #111; }
+        body.light-theme .order-form { background: #fff; }
+        body.light-theme .form-wrapper { background: #fafafa; border-color: #eee; }
+        body.light-theme .form-group label { color: #333; }
+        body.light-theme .form-group input,
+        body.light-theme .form-group textarea { background: #fff; border-color: #ddd; color: #111; }
+        body.light-theme footer { background: #fff; border-top: 1px solid #ddd; }
+        body.light-theme footer p { color: #555; }
+
+        .theme-toggle {
+            background: none; border: none; color: inherit; cursor: pointer;
+            font-size: 22px; margin-left: 20px; vertical-align: middle;
+        }
+        .theme-toggle:hover { color: #ff8c00; }
+
+        @media (max-width: 768px) {
+            .hero-left h1 { font-size: 32px; }
+            .menu a { font-size: 14px; }
+            .main-header .container { justify-content: center; }
+            .logo { font-size: 28px; }
+        }
     </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="logo">ЮЛМИ-ТРАНС</div>
-    <nav class="menu">
-        <a href="#">Услуги</a>
-        <a href="#">О компании</a>
-        <a href="#">Калькулятор</a>
-        <a href="#">Отзывы</a>
-        <a href="#">Контакты</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>Перевозки по всей России и Крайнему Северу</h1>
-    <div class="contact-block">
-        <div class="phone-box">
-            <strong>📞 Телефоны:</strong>
-            <a href="tel:+79128887300">+7 912 888-73-00</a>
-            <a href="tel:+79128880042">+7 912 888-00-42</a>
-            <a href="tel:+79128884300">+7 912 888-43-00</a>
+<!-- верхняя контактная полоса -->
+<div class="top-bar">
+    <div class="container">
+        <div class="phones">
+            <a href="tel:89128887300"><i class="fas fa-phone-alt"></i> 8 912 888-73-00</a>
+            <a href="tel:89128880042">8 912 888-00-42</a>
+            <a href="tel:89128884300">8 912 888-43-00</a>
         </div>
-        <div class="email-box">
-            <strong>📧 Почта:</strong><br>
-            <a href="mailto:yulmitrans@mail.ru">yulmitrans@mail.ru</a>
-        </div>
-        <div class="telegram-box">
-            <strong>💬 Telegram:</strong><br>
-            <a href="https://t.me/yulmitrans" target="_blank">t.me/yulmitrans</a>
+        <div class="info">
+            <span><i class="fas fa-envelope"></i> yulmitrans@mail.ru</span>
+            <span><i class="fas fa-clock"></i> Круглосуточно</span>
+            <span><i class="fab fa-telegram-plane"></i> t.me/yulmitrans</span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </div>
-    <a href="#form" class="btn">Оставить заявку</a>
-    <a href="https://t.me/yulmitrans" target="_blank" class="btn btn-telegram">Написать в Telegram</a>
+</div>
+
+<!-- основное меню -->
+<header class="main-header">
+    <div class="container">
+        <div class="logo"><span class="white">ЮЛМИ</span>-<span class="orange">ТРАНС</span></div>
+        <nav class="menu">
+            <a href="#services">Услуги</a>
+            <a href="#about">О компании</a>
+            <a href="#form">Калькулятор</a>
+            <a href="#testimonials">Отзывы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<!-- hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-left">
+            <h1>НАДЕЖНАЯ ДОСТАВКА ГРУЗОВ</h1>
+            <p><span class="highlight">Быстро. Вовремя. Всегда.</span></p>
+            <p>Транспортная компания с 12-летним опытом. Доставляем грузы по России — от 100 кг до 20 тонн.</p>
+            <div class="buttons">
+                <a href="#form" class="btn-orange">Рассчитать стоимость</a>
+                <a href="#services" class="btn-outline">Наши услуги</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Грузовик">
+        </div>
+    </div>
 </section>
 
-<div class="regime">
-    <strong>РЕЖИМ РАБОТЫ:</strong> Круглосуточно, без выходных<br>
-    <small>Часы работы офиса: 10:00 – 12:00</small>
-</div>
-<div class="policy">
-    🚛 Работаем по всей России и Крайнему Северу. Услуги бесплатные.
-</div>
+<!-- услуги -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-truck"></i></div>
+                <h3>Грузоперевозки по РФ</h3>
+                <p>Доставка любых грузов от 100 кг до 20 тонн по всей стране.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+                <h3>Северный завоз</h3>
+                <p>Надёжная доставка в районы Крайнего Севера и удалённые регионы.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-calculator"></i></div>
+                <h3>Расчёт стоимости</h3>
+                <p>Бесплатный расчёт маршрута и стоимости за 30 минут.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Страхование груза</h3>
+                <p>Полная финансовая защита на всём пути следования.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- ФОРМА С ВАШИМ FORMSPREE ID -->
-<div class="form-section" id="form">
-    <h2>Оставить заявку</h2>
-    <!-- ВНИМАНИЕ: здесь уже ваш рабочий action! -->
-    <form action="https://formspree.io/f/xyklaovw" method="POST">
-        <div class="form-group">
-            <label for="name">Ваше имя *</label>
-            <input type="text" id="name" name="name" placeholder="Иван Петров" required>
+<!-- о компании -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-text">
+            <h2>О компании «ЮЛМИ-ТРАНС»</h2>
+            <p><strong>Быстрая, надёжная доставка грузов от 100 кг до 20 тонн по всей России, включая регионы Крайнего Севера.</strong> Принимаем сборный груз и негабарит, оформляем разрешения и сопроводительные документы. Любая форма оплаты, в том числе с НДС.</p>
+            <p><strong>Услуги для физических лиц:</strong> домашние переезды, переезды для военнослужащих, перевозка личных вещей, имущества, мебели, бытовой техники, перевозка легковых автомобилей.</p>
+            <p><strong>Услуги для юридических лиц:</strong> перевозка всех грузов от 100 кг в любую точку России, контейнерные перевозки, перевозки скоропортящихся грузов, продуктов с температурным режимом рефрижератором, доставка грузов в труднодоступные районы: Воркута, Усинск, ХМАО, ЯНАО.</p>
+            <p><strong>Услуга «Срочная доставка» отдельным транспортом:</strong> перевозка металла, металлолома, трубы, металлопроката, перевозка ж/д запчастей, включая колесные пары, перевозка леса, бруса, доски, пиломатериала, перевозка негабаритных грузов: строительная и сельскохозяйственная техника, промышленное оборудование, металлоконструкции, водные транспортные средства, электрические подстанции.</p>
+            <p><strong>Преимущества для клиентов:</strong> 100% гарантия сохранности вашего груза, страхование груза. Перевозка «от двери до двери» без склада и перегруза. Персональный менеджер контролирует перевозку, круглосуточная обратная связь. Помощь в организации погрузки и выгрузки с привлечением грузчиков и спецтехники. Оперативный документооборот: отчётные документы направим в течение 3-х дней. Система лояльности для постоянных клиентов.</p>
         </div>
-        <div class="form-group">
-            <label for="phone">Телефон *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required>
+        <div class="about-image">
+            <img src="https://i.ibb.co/W4dHTxzW/grok-image-1777317549487.jpg" alt="Наш транспорт">
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="example@mail.ru">
+    </div>
+</section>
+
+<!-- отзывы -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Доставили груз в Норильск на два дня раньше. Машина чистая, упаковка целая. Отличная работа!»</p><div class="author-info"><strong>Михаил К.</strong><span>ООО «СеверПроект»</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Перевозим стройматериалы по зимнику — всегда вовремя. Цены адекватные, менеджеры на связи 24/7.»</p><div class="author-info"><strong>Анна С.</strong><span>Строительная компания «Арктика»</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Быстро рассчитали стоимость, подобрали транспорт под нестандартный груз. Всем рекомендую.»</p><div class="author-info"><strong>Сергей П.</strong><span>Торговая компания «МеталлСервис»</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Срочно потребовалось отправить оборудование в Якутию. Уложились в 3 дня! Спасибо.»</p><div class="author-info"><strong>Алексей Т.</strong><span>ООО «ПромТехМонтаж»</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Работаю с Юлми-Транс уже 4 года. Ни разу не подвели. Лучшие на направлении Север.»</p><div class="author-info"><strong>Елена М.</strong><span>Сеть магазинов «Норд»</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Доставка негабаритного груза — всё чётко. Водитель вежливый, документы в порядке.»</p><div class="author-info"><strong>Дмитрий О.</strong><span>Частный предприниматель</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Низкий поклон за работу на трассе. Груз пришёл без единого повреждения.»</p><div class="author-info"><strong>Игорь Ш.</strong><span>Строительный холдинг «Вектор»</span></div></div>
+            <div class="testimonial-card"><div class="rating">★★★★★</div><p class="quote">«Самые выгодные цены на рынке. Уже троим партнёрам порекомендовал.»</p><div class="author-info"><strong>Ольга В.</strong><span>Логист компании «ТрансЭкспресс»</span></div></div>
         </div>
-        <div class="form-group">
-            <label for="message">Сообщение</label>
-            <textarea id="message" name="message" rows="3" placeholder="Опишите задачу..."></textarea>
+    </div>
+</section>
+
+<!-- контакты -->
+<section class="contacts" id="contacts">
+    <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:89128887300">8 912 888-73-00</a>
+                <a href="tel:89128880042">8 912 888-00-42</a>
+                <a href="tel:89128884300">8 912 888-43-00</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-telegram-plane"></i>
+                <a href="https://t.me/yulmitrans" target="_blank" class="telegram-link">@yulmitrans</a>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:yulmitrans@mail.ru">yulmitrans@mail.ru</a>
+            </div>
         </div>
-        <button type="submit">Отправить заявку</button>
-    </form>
-</div>
+    </div>
+</section>
+
+<!-- форма заявки -->
+<section class="order-form" id="form">
+    <div class="container">
+        <div class="form-wrapper">
+            <h2 class="section-title">Оставить заявку</h2>
+            <p style="text-align:center; color:#ccc; margin-bottom:30px;">Укажите телефон и габариты груза — мы перезвоним до 15 минут</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required>
+                </div>
+                <div class="form-group">
+                    <label for="dimensions">Габариты и описание груза *</label>
+                    <textarea id="dimensions" name="dimensions" placeholder="Вес, размеры, объём, особенности" required></textarea>
+                </div>
+                <button type="submit" class="btn-orange">Отправить заявку</button>
+            </form>
+            <p id="form-status" style="text-align:center; margin-top:20px; color:#ff8c00;"></p>
+        </div>
+    </div>
+</section>
 
 <footer>
-    © 2023 ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу.<br>
-    Отправить сообщение: <a href="mailto:info@yulmi-trans.ru">info@yulmi-trans.ru</a>
+    <div class="container">
+        <p>© 2016 ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу.</p>
+        <p><a href="mailto:yulmitrans@mail.ru">yulmitrans@mail.ru</a> | 8 912 888-73-00</p>
+    </div>
 </footer>
+
+<!-- переключение темы -->
+<script>
+    (function() {
+        const body = document.body;
+        const toggleBtn = document.getElementById('theme-toggle');
+        const icon = toggleBtn.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-theme');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            if (isLight) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    })();
+</script>
+
+<!-- Отправка формы через Google Apps Script -->
+<script>
+    (function() {
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmxukT-C7wnQ-hEheYqgumDEVCCbjOX3O-paHKEb2l7nMCNt5lcepLQ3fXfnyBLW4C/exec';
+
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const btn = form.querySelector('.btn-orange');
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+
+            const phone = document.getElementById('phone').value.trim();
+            const dimensions = document.getElementById('dimensions').value.trim();
+
+            const data = { phone, dimensions };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network error');
+                return response.json();
+            })
+            .then(result => {
+                if (result.success) {
+                    status.textContent = '✅ Заявка отправлена! Мы перезвоним.';
+                    form.reset();
+                } else {
+                    throw new Error('Server error');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                status.textContent = '❌ Ошибка. Позвоните нам по телефону.';
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.textContent = 'Отправить заявку';
+            });
+        });
+    })();
+</script>
 
 </body>
 </html>
