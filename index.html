@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; color: #222; line-height: 1.5; }
+        .header { background: #1a3b5c; color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 24px; font-weight: bold; }
+        .menu a { color: #fff; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .menu a:hover { text-decoration: underline; }
+        .hero { background: #f4f4f4; padding: 50px 20px; text-align: center; }
+        .hero h1 { font-size: 32px; margin-bottom: 20px; }
+        .contact-block { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 30px 0; }
+        .phone-box, .email-box, .telegram-box { background: #fff; border: 1px solid #ddd; padding: 20px; border-radius: 10px; min-width: 200px; }
+        .phone-box a { color: #1a3b5c; font-size: 20px; font-weight: bold; text-decoration: none; display: block; margin: 5px 0; }
+        .btn { display: inline-block; background: #f90; color: #fff; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin: 10px 5px; }
+        .btn-telegram { background: #08c; }
+        .regime { margin: 20px; font-size: 16px; text-align: center; }
+        .regime strong { color: #1a3b5c; }
+        .policy { background: #ffe; padding: 10px; margin: 20px; text-align: center; border-radius: 5px; }
+        .form-section { max-width: 500px; margin: 30px auto; padding: 20px; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 10px; }
+        .form-section h2 { text-align: center; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .form-group textarea { resize: vertical; }
+        button[type="submit"] { background: #1a3b5c; color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; }
+        button[type="submit"]:hover { background: #0f2a40; }
+        footer { background: #1a3b5c; color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
+        footer a { color: #f90; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">ЮЛМИ-ТРАНС</div>
+    <nav class="menu">
+        <a href="#">Услуги</a>
+        <a href="#">О компании</a>
+        <a href="#">Калькулятор</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Контакты</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Перевозки по всей России и Крайнему Северу</h1>
+    <div class="contact-block">
+        <div class="phone-box">
+            <strong>📞 Телефоны:</strong>
+            <a href="tel:+79128887300">+7 912 888-73-00</a>
+            <a href="tel:+79128880042">+7 912 888-00-42</a>
+            <a href="tel:+79128884300">+7 912 888-43-00</a>
+        </div>
+        <div class="email-box">
+            <strong>📧 Почта:</strong><br>
+            <a href="mailto:yulmitrans@mail.ru">yulmitrans@mail.ru</a>
+        </div>
+        <div class="telegram-box">
+            <strong>💬 Telegram:</strong><br>
+            <a href="https://t.me/yulmitrans" target="_blank">t.me/yulmitrans</a>
+        </div>
+    </div>
+    <a href="#form" class="btn">Оставить заявку</a>
+    <a href="https://t.me/yulmitrans" target="_blank" class="btn btn-telegram">Написать в Telegram</a>
+</section>
+
+<div class="regime">
+    <strong>РЕЖИМ РАБОТЫ:</strong> Круглосуточно, без выходных<br>
+    <small>Часы работы офиса: 10:00 – 12:00</small>
+</div>
+<div class="policy">
+    🚛 Работаем по всей России и Крайнему Северу. Услуги бесплатные.
+</div>
+
+<!-- ФОРМА С ВАШИМ FORMSPREE ID -->
+<div class="form-section" id="form">
+    <h2>Оставить заявку</h2>
+    <!-- ВНИМАНИЕ: здесь уже ваш рабочий action! -->
+    <form action="https://formspree.io/f/xyklaovw" method="POST">
+        <div class="form-group">
+            <label for="name">Ваше имя *</label>
+            <input type="text" id="name" name="name" placeholder="Иван Петров" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Телефон *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.ru">
+        </div>
+        <div class="form-group">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" rows="3" placeholder="Опишите задачу..."></textarea>
+        </div>
+        <button type="submit">Отправить заявку</button>
+    </form>
+</div>
+
+<footer>
+    © 2023 ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу.<br>
+    Отправить сообщение: <a href="mailto:info@yulmi-trans.ru">info@yulmi-trans.ru</a>
+</footer>
+
+</body>
+</html>
