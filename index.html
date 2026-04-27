@@ -16,10 +16,8 @@
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* === ТЁМНАЯ ТЕМА (по умолчанию) === */
         .top-bar {
             background: #111; padding: 12px 0; font-size: 15px; border-bottom: 1px solid #222;
-            transition: background 0.3s, border-color 0.3s;
         }
         .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .top-bar .phones a { color: #fff; text-decoration: none; margin-right: 20px; font-weight: bold; white-space: nowrap; }
@@ -37,13 +35,11 @@
         .btn-outline {
             background: transparent; border: 2px solid #ff8c00; color: #ff8c00;
             padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold;
-            transition: 0.3s;
         }
         .btn-outline:hover { background: #ff8c00; color: #000; }
 
         .main-header {
             background: #000; padding: 15px 0; border-bottom: 1px solid #222;
-            transition: background 0.3s, border-color 0.3s;
         }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo { font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
@@ -79,18 +75,18 @@
             margin: 15px auto 0;
         }
 
-        .services { background: #0a0a0a; padding: 80px 0; transition: background 0.3s; }
+        .services { background: #0a0a0a; padding: 80px 0; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .service-card {
             background: #111; padding: 40px 30px; border-radius: 8px; text-align: center;
-            border: 1px solid #222; transition: background 0.3s, border-color 0.3s;
+            border: 1px solid #222; transition: border-color 0.3s;
         }
         .service-card:hover { border-color: #ff8c00; }
         .service-icon { font-size: 40px; color: #ff8c00; margin-bottom: 25px; }
         .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 20px; }
         .service-card p { color: #aaa; font-size: 14px; }
 
-        .about { background: #000; padding: 80px 0; transition: background 0.3s; }
+        .about { background: #000; padding: 80px 0; }
         .about .container { display: flex; align-items: flex-start; gap: 50px; flex-wrap: wrap; }
         .about-text { flex: 1; min-width: 280px; }
         .about-text h2 { font-size: 32px; font-weight: 900; margin-bottom: 20px; color: #fff; }
@@ -98,39 +94,38 @@
         .about-image { flex: 1; min-width: 280px; }
         .about-image img { width: 100%; border-radius: 8px; border: 1px solid #333; }
 
-        .testimonials { background: #0a0a0a; padding: 80px 0; transition: background 0.3s; }
+        .testimonials { background: #0a0a0a; padding: 80px 0; }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .testimonial-card {
             background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;
-            transition: background 0.3s, border-color 0.3s;
         }
         .testimonial-card .quote { font-style: italic; color: #ddd; margin-bottom: 20px; font-size: 15px; }
         .author-info strong { display: block; color: #fff; font-size: 16px; }
         .author-info span { color: #999; font-size: 13px; }
         .rating { color: #ff8c00; margin-bottom: 12px; }
 
-        .contacts { background: #000; padding: 80px 0; transition: background 0.3s; }
+        .contacts { background: #000; padding: 80px 0; }
         .contact-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
         .contact-card {
             background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;
-            min-width: 250px; text-align: center; transition: background 0.3s, border-color 0.3s;
+            min-width: 250px; text-align: center;
         }
         .contact-card i { font-size: 30px; color: #ff8c00; margin-bottom: 15px; }
         .contact-card a { color: #fff; text-decoration: none; font-size: 18px; font-weight: bold; display: block; margin: 8px 0; }
         .contact-card .telegram-link { color: #0088cc; }
         .contact-card .telegram-link i { color: #0088cc; }
 
-        .order-form { background: #000; padding: 80px 0; transition: background 0.3s; }
+        .order-form { background: #000; padding: 80px 0; }
         .form-wrapper {
             max-width: 700px; margin: 0 auto; background: #111; padding: 40px;
-            border-radius: 8px; border: 1px solid #222; transition: background 0.3s, border-color 0.3s;
+            border-radius: 8px; border: 1px solid #222;
         }
         .form-wrapper h2 { text-align: center; margin-bottom: 20px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; color: #ccc; font-weight: bold; }
         .form-group input, .form-group textarea {
             width: 100%; padding: 12px; background: #222; border: 1px solid #333;
-            border-radius: 6px; color: #fff; font-size: 16px; transition: background 0.3s, border-color 0.3s;
+            border-radius: 6px; color: #fff; font-size: 16px;
         }
         .form-group input:focus, .form-group textarea:focus { border-color: #ff8c00; outline: none; }
         .form-group textarea { resize: vertical; min-height: 120px; }
@@ -138,12 +133,10 @@
 
         footer {
             background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid #222;
-            transition: background 0.3s, border-color 0.3s;
         }
         footer p { color: #888; margin-bottom: 10px; }
         footer a { color: #ff8c00; text-decoration: none; }
 
-        /* === СВЕТЛАЯ ТЕМА === */
         body.light-theme { background: #f5f5f5; color: #222; }
         body.light-theme .top-bar { background: #fff; border-bottom: 1px solid #ddd; }
         body.light-theme .top-bar .phones a { color: #222; }
@@ -193,7 +186,6 @@
 </head>
 <body>
 
-<!-- верхняя контактная полоса -->
 <div class="top-bar">
     <div class="container">
         <div class="phones">
@@ -205,14 +197,11 @@
             <span><i class="fas fa-envelope"></i> yulmitrans@mail.ru</span>
             <span><i class="fas fa-clock"></i> Круглосуточно</span>
             <span><i class="fab fa-telegram-plane"></i> t.me/yulmitrans</span>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
         </div>
     </div>
 </div>
 
-<!-- основное меню -->
 <header class="main-header">
     <div class="container">
         <div class="logo"><span class="white">ЮЛМИ</span>-<span class="orange">ТРАНС</span></div>
@@ -226,7 +215,6 @@
     </div>
 </header>
 
-<!-- hero -->
 <section class="hero">
     <div class="container">
         <div class="hero-left">
@@ -244,7 +232,6 @@
     </div>
 </section>
 
-<!-- услуги -->
 <section class="services" id="services">
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
@@ -273,7 +260,6 @@
     </div>
 </section>
 
-<!-- о компании -->
 <section class="about" id="about">
     <div class="container">
         <div class="about-text">
@@ -290,7 +276,6 @@
     </div>
 </section>
 
-<!-- отзывы -->
 <section class="testimonials" id="testimonials">
     <div class="container">
         <h2 class="section-title">Отзывы клиентов</h2>
@@ -307,7 +292,6 @@
     </div>
 </section>
 
-<!-- контакты -->
 <section class="contacts" id="contacts">
     <div class="container">
         <h2 class="section-title">Контакты</h2>
@@ -330,7 +314,6 @@
     </div>
 </section>
 
-<!-- форма заявки -->
 <section class="order-form" id="form">
     <div class="container">
         <div class="form-wrapper">
@@ -359,7 +342,6 @@
     </div>
 </footer>
 
-<!-- переключение темы -->
 <script>
     (function() {
         const body = document.body;
@@ -386,10 +368,9 @@
     })();
 </script>
 
-<!-- Отправка формы через Google Apps Script -->
 <script>
     (function() {
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmxukT-C7wnQ-hEheYqgumDEVCCbjOX3O-paHKEb2l7nMCNt5lcepLQ3fXfnyBLW4C/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyUk3zRtmVZwM6EXA4bGWTYdG4PXg6nuPVNRBqB5a8XsS4x6ASXE1frQF0OeXjwuIFR/exec';
 
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
