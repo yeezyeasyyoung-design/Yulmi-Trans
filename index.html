@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу</title>
     <meta name="yandex-verification" content="a26e24be5474902b" />
-    <meta name="google-site-verification" content="2d66fa4718a9ed12" />
+    <meta name="google-site-verification" content="jdFMTaQpAQ3N94nrwTLeJIskhg6WGxxpVKQMi-WpiYo" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -536,7 +536,6 @@
         document.getElementById('dimensions_hidden').value = `${length}x${width}x${height}`;
         document.getElementById('calculated_price').value = price;
 
-        // Отправляем событие в Яндекс.Метрику (цель "Заявка")
         if (typeof ym !== 'undefined') {
             ym(100257636, 'reachGoal', 'form_submit');
         }
@@ -581,7 +580,6 @@
             if (result.success === "true") {
                 status.textContent = "✅ Заявка отправлена! Мы перезвоним.";
                 form.reset();
-                // Отправляем событие в Яндекс.Метрику (цель "Заявка")
                 if (typeof ym !== 'undefined') {
                     ym(100257636, 'reachGoal', 'form_submit');
                 }
