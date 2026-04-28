@@ -86,7 +86,11 @@
         .step h3 { color: #fff; margin-bottom: 10px; }
         .step p { color: #aaa; font-size: 14px; }
 
-        .about { background: #1a1000; padding: 80px 0; }
+        /* О компании с фоновой картинкой */
+        .about {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://i.ibb.co/8DHtZ9Q4/IMG-20260428-210811-594.jpg') center/cover no-repeat;
+            padding: 80px 0;
+        }
         .about .container { display: flex; align-items: flex-start; gap: 50px; flex-wrap: wrap; }
         .about-text { flex: 1; min-width: 280px; }
         .about-text h2 { font-size: 48px; font-weight: 900; margin-bottom: 30px; color: #ff8c00; text-transform: uppercase; }
@@ -97,8 +101,6 @@
         .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,140,0,0.1); border-top: none; padding: 0 25px; color: #ccc; font-size: 16px; line-height: 1.7; }
         .accordion.active .accordion-body { max-height: 1500px; padding: 20px 25px; }
         .accordion.active .accordion-header i { transform: rotate(180deg); }
-        .about-image { flex: 1; min-width: 280px; }
-        .about-image img { width: 100%; border-radius: 12px; border: 1px solid rgba(255,140,0,0.3); }
 
         .testimonials { background: #0a0a0a; padding: 80px 0; }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
@@ -108,8 +110,9 @@
         .author-info span { color: #999; font-size: 13px; }
         .rating { color: #ff8c00; margin-bottom: 12px; }
 
+        /* Контакты с насыщенной картинкой */
         .contacts {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat;
             padding: 80px 0;
         }
         .contact-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
@@ -179,42 +182,35 @@
         body.light-theme .hero-left p { color: #bbb; }
         body.light-theme .section-title { color: #111; }
         body.light-theme .services { background: #fff; }
-        body.light-theme .service-card:nth-child(1) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/d4pd2dS5/Screenshot-2026-04-28-19-55-30-447-com-android-chrome-edit.jpg') center/cover no-repeat; border-color: #eee; }
-        body.light-theme .service-card:nth-child(1) h3, body.light-theme .service-card:nth-child(1) p { color: #111; }
-        body.light-theme .service-card:nth-child(1) .service-icon { color: #111; }
-        body.light-theme .service-card:nth-child(2) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/TMMKvY96/Screenshot-2026-04-28-19-57-28-743-com-google-android-googlequicksearchbox-edit.jpg') center/cover no-repeat; border-color: #eee; }
-        body.light-theme .service-card:nth-child(2) h3, body.light-theme .service-card:nth-child(2) p { color: #111; }
-        body.light-theme .service-card:nth-child(2) .service-icon { color: #111; }
-        body.light-theme .service-card:nth-child(3) { background: #fff; border-color: #4CAF50; }
-        body.light-theme .service-card:nth-child(3) h3, body.light-theme .service-card:nth-child(3) p { color: #111; }
-        body.light-theme .service-card:nth-child(3) .service-icon { color: #4CAF50; }
-        body.light-theme .service-card:nth-child(3)::after { color: #4CAF50; }
-        body.light-theme .service-card:nth-child(4) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/ZRCLhFx7/grok-image-1777392009888.jpg') center/cover no-repeat; border-color: #eee; }
-        body.light-theme .service-card:nth-child(4) h3, body.light-theme .service-card:nth-child(4) p { color: #111; }
-        body.light-theme .service-card:nth-child(4) .service-icon { color: #111; }
-        body.light-theme .service-card:nth-child(5) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/27HkQx3w/Screenshot-2026-04-28-20-04-43-795-com-android-chrome-edit.jpg') center/cover no-repeat; border-color: #eee; }
-        body.light-theme .service-card:nth-child(5) h3, body.light-theme .service-card:nth-child(5) p { color: #111; }
-        body.light-theme .service-card:nth-child(5) .service-icon { color: #111; }
-        body.light-theme .service-card { border-color: #eee; }
         body.light-theme .how-we-work { background: #fff; }
         body.light-theme .step { background: #fff; border-color: #eee; }
         body.light-theme .step h3 { color: #111; }
         body.light-theme .step p { color: #444; }
-        body.light-theme .about { background: #fff5e6; }
+
+        /* О компании на светлой теме */
+        body.light-theme .about {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/8DHtZ9Q4/IMG-20260428-210811-594.jpg') center/cover no-repeat;
+        }
         body.light-theme .about-text h2 { color: #ff8c00; }
-        body.light-theme .accordion-header { background: #fff; border-color: #ff8c00; color: #ff8c00; }
-        body.light-theme .accordion-body { background: #fff; color: #333; }
+        body.light-theme .accordion-header { background: rgba(255,140,0,0.12); border-color: #ff8c00; color: #ff8c00; }
+        body.light-theme .accordion-body { background: rgba(255,255,255,0.05); color: #eee; }
+
         body.light-theme .testimonials { background: #fff; }
         body.light-theme .testimonial-card { background: #fff; border-color: #eee; }
         body.light-theme .testimonial-card .quote { color: #333; }
         body.light-theme .author-info strong { color: #111; }
         body.light-theme .author-info span { color: #555; }
-        body.light-theme .contacts { background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat; }
+
+        /* Контакты на светлой теме — без белой вуали */
+        body.light-theme .contacts {
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat;
+        }
         body.light-theme .contact-card { background: #fff; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
         body.light-theme .contact-card h3 { color: #111; }
         body.light-theme .contact-card a { color: #444; }
         body.light-theme .contact-card a:hover { color: #ff8c00; }
         body.light-theme .contact-card .telegram-link { color: #0088cc; }
+
         body.light-theme .order-form { background: #fff; }
         body.light-theme .form-wrapper { background: #fff; border-color: #eee; }
         body.light-theme .form-group label { color: #333; }
@@ -329,9 +325,6 @@
             <div class="accordion"><button class="accordion-header">⚡ Услуга «Срочная доставка» отдельным транспортом <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Перевозка металла, металлолома, трубы, металлопроката, перевозка ж/д запчастей, включая колесные пары, перевозка леса, бруса, доски, пиломатериала, перевозка негабаритных грузов: строительная и сельскохозяйственная техника, промышленное оборудование, металлоконструкции, водные транспортные средства, электрические подстанции.</p></div></div>
             <div class="accordion"><button class="accordion-header">⭐ Преимущества для клиентов <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>✅ 100% гарантия сохранности вашего груза, страхование груза.<br>✅ Перевозка «от двери до двери» без склада и перегруза.<br>✅ Персональный менеджер контролирует перевозку, круглосуточная обратная связь.<br>✅ Помощь в организации погрузки и выгрузки с привлечением грузчиков и спецтехники.<br>✅ Оперативный документооборот: отчётные документы направим в течение 3-х дней.<br>✅ Система лояльности для постоянных клиентов.</p></div></div>
         </div>
-        <div class="about-image">
-            <img src="https://i.ibb.co/W4dHTxzW/grok-image-1777317549487.jpg" alt="Наш транспорт">
-        </div>
     </div>
 </section>
 
@@ -404,6 +397,7 @@
             </div>
             <div id="order-section" style="display:none;">
                 <form action="https://formsubmit.co/ajax/yulmitrans@mail.ru" method="POST" id="contact-form">
+                    <input type="hidden" name="_language" value="ru">
                     <input type="hidden" name="from" id="from_hidden">
                     <input type="hidden" name="to" id="to_hidden">
                     <input type="hidden" name="weight" id="weight_hidden">
