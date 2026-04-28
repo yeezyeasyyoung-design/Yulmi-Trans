@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЮЛМИ-ТРАНС — Перевозки по России и Крайнему Северу</title>
     <meta name="yandex-verification" content="a26e24be5474902b" />
+    <meta name="google-site-verification" content="2d66fa4718a9ed12" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(100257636, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/100257636" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -87,7 +103,6 @@
         .step h3 { color: #fff; margin-bottom: 10px; }
         .step p { color: #aaa; font-size: 14px; }
 
-        /* О компании с фоновой картинкой */
         .about {
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://i.ibb.co/8DHtZ9Q4/IMG-20260428-210811-594.jpg') center/cover no-repeat;
             padding: 80px 0;
@@ -111,7 +126,6 @@
         .author-info span { color: #999; font-size: 13px; }
         .rating { color: #ff8c00; margin-bottom: 12px; }
 
-        /* Контакты с насыщенной картинкой */
         .contacts {
             background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat;
             padding: 80px 0;
@@ -187,22 +201,17 @@
         body.light-theme .step { background: #fff; border-color: #eee; }
         body.light-theme .step h3 { color: #111; }
         body.light-theme .step p { color: #444; }
-
-        /* О компании на светлой теме */
         body.light-theme .about {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/8DHtZ9Q4/IMG-20260428-210811-594.jpg') center/cover no-repeat;
         }
         body.light-theme .about-text h2 { color: #ff8c00; }
         body.light-theme .accordion-header { background: rgba(255,140,0,0.2); border-color: #ff8c00; color: #ff8c00; }
         body.light-theme .accordion-body { background: rgba(0,0,0,0.25); color: #fff; }
-
         body.light-theme .testimonials { background: #fff; }
         body.light-theme .testimonial-card { background: #fff; border-color: #eee; }
         body.light-theme .testimonial-card .quote { color: #333; }
         body.light-theme .author-info strong { color: #111; }
         body.light-theme .author-info span { color: #555; }
-
-        /* Контакты на светлой теме — без белой вуали */
         body.light-theme .contacts {
             background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat;
         }
@@ -211,7 +220,6 @@
         body.light-theme .contact-card a { color: #444; }
         body.light-theme .contact-card a:hover { color: #ff8c00; }
         body.light-theme .contact-card .telegram-link { color: #0088cc; }
-
         body.light-theme .order-form { background: #fff; }
         body.light-theme .form-wrapper { background: #fff; border-color: #eee; }
         body.light-theme .form-group label { color: #333; }
@@ -527,6 +535,11 @@
         document.getElementById('weight_hidden').value = weight;
         document.getElementById('dimensions_hidden').value = `${length}x${width}x${height}`;
         document.getElementById('calculated_price').value = price;
+
+        // Отправляем событие в Яндекс.Метрику (цель "Заявка")
+        if (typeof ym !== 'undefined') {
+            ym(100257636, 'reachGoal', 'form_submit');
+        }
     }
 
     document.querySelectorAll('.accordion-header').forEach(header => {
@@ -565,8 +578,16 @@
         fetch(form.action, { method: "POST", headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
         .then(r => r.json())
         .then(result => {
-            if (result.success === "true") { status.textContent = "✅ Заявка отправлена! Мы перезвоним."; form.reset(); }
-            else { status.textContent = "❌ Ошибка. Попробуйте ещё раз."; }
+            if (result.success === "true") {
+                status.textContent = "✅ Заявка отправлена! Мы перезвоним.";
+                form.reset();
+                // Отправляем событие в Яндекс.Метрику (цель "Заявка")
+                if (typeof ym !== 'undefined') {
+                    ym(100257636, 'reachGoal', 'form_submit');
+                }
+            } else {
+                status.textContent = "❌ Ошибка. Попробуйте ещё раз.";
+            }
         })
         .catch(error => { status.textContent = "❌ Ошибка сети. Позвоните нам."; console.error(error); })
         .finally(() => { btn.disabled = false; btn.textContent = "Отправить заявку"; });
