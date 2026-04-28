@@ -16,9 +16,8 @@
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .top-bar {
-            background: #111; padding: 12px 0; font-size: 15px; border-bottom: 1px solid #222;
-        }
+        /* === ТЁМНАЯ ТЕМА === */
+        .top-bar { background: #111; padding: 12px 0; font-size: 15px; border-bottom: 1px solid #222; }
         .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .top-bar .phones a { color: #fff; text-decoration: none; margin-right: 20px; font-weight: bold; white-space: nowrap; }
         .top-bar .phones a:hover { color: #ff8c00; }
@@ -26,161 +25,190 @@
         .top-bar .info span { color: #ccc; }
         .top-bar .info i { color: #ff8c00; margin-right: 5px; }
 
-        .btn-orange {
-            display: inline-block; background: #ff8c00; color: #000; padding: 12px 28px;
-            border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s;
-            border: none; cursor: pointer; font-size: 16px;
-        }
+        .btn-orange { display: inline-block; background: #ff8c00; color: #000; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; font-size: 16px; }
         .btn-orange:hover { background: #e67e00; transform: translateY(-2px); }
-        .btn-outline {
-            background: transparent; border: 2px solid #ff8c00; color: #ff8c00;
-            padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold;
-        }
+        .btn-outline { background: transparent; border: 2px solid #ff8c00; color: #ff8c00; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; }
         .btn-outline:hover { background: #ff8c00; color: #000; }
+        .btn-telegram { background: #0088cc; color: #fff; }
+        .btn-telegram:hover { background: #0077b3; transform: translateY(-2px); }
 
-        .main-header {
-            background: #000; padding: 15px 0; border-bottom: 1px solid #222;
-        }
+        .main-header { background: #000; padding: 15px 0; border-bottom: 1px solid #222; }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo { font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
-        .logo .white { color: #fff; }
-        .logo .orange { color: #ff8c00; }
+        .logo .yl { color: #fff; }
+        .logo .trans { color: #ff8c00; }
         .menu { display: flex; flex-wrap: wrap; gap: 20px; }
-        .menu a {
-            color: #ccc; text-decoration: none; font-size: 16px; font-weight: 500;
-            transition: color 0.3s; white-space: nowrap;
-        }
+        .menu a { color: #ccc; text-decoration: none; font-size: 16px; font-weight: 500; transition: color 0.3s; white-space: nowrap; }
         .menu a:hover { color: #ff8c00; }
 
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('https://i.ibb.co/PGbGPT5p/grok-image-1776798543221.jpg') center/cover no-repeat;
-            padding: 80px 0; text-align: left;
-        }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/PGbGPT5p/grok-image-1776798543221.jpg') center/cover no-repeat; padding: 80px 0; text-align: left; }
         .hero .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .hero-left { flex: 1; min-width: 300px; }
         .hero-left h1 { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; text-transform: uppercase; }
-        .hero-left .highlight { color: #ff8c00; }
+        .hero-slogan { font-size: 64px; font-weight: 900; line-height: 1.1; margin-bottom: 30px; }
+        .hero-slogan .line1 { color: #fff; }
+        .hero-slogan .line2 { color: #ff8c00; }
+        .hero-slogan .line3 { color: #fff; }
         .hero-left p { font-size: 18px; color: #bbb; margin-bottom: 30px; max-width: 500px; }
         .hero-left .buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-        .hero-right { flex: 1; min-width: 300px; text-align: right; }
-        .hero-right img { max-width: 100%; border-radius: 10px; }
 
-        .section-title {
-            text-align: center; font-size: 36px; font-weight: 900; text-transform: uppercase;
-            margin-bottom: 50px; color: #fff;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 80px; height: 4px; background: #ff8c00;
-            margin: 15px auto 0;
-        }
+        .section-title { text-align: center; font-size: 36px; font-weight: 900; text-transform: uppercase; margin-bottom: 50px; color: #fff; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: #ff8c00; margin: 15px auto 0; }
 
         .services { background: #0a0a0a; padding: 80px 0; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .services-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .service-card {
-            background: #111; padding: 40px 30px; border-radius: 8px; text-align: center;
-            border: 1px solid #222; transition: border-color 0.3s;
+            flex: 1 1 200px; min-width: 180px; max-width: 220px;
+            padding: 40px 20px; border-radius: 12px; text-align: center; border: 1px solid #222;
+            transition: transform 0.3s, border-color 0.3s;
         }
-        .service-card:hover { border-color: #ff8c00; }
-        .service-icon { font-size: 40px; color: #ff8c00; margin-bottom: 25px; }
+        .service-card:hover { transform: translateY(-5px); border-color: transparent; }
+        .service-card:nth-child(1) { background: #1a1a1a; border-left: 4px solid #ff8c00; }
+        .service-card:nth-child(2) { background: #1a1a1a; border-left: 4px solid #0088cc; }
+        .service-card:nth-child(3) { background: #1a1a1a; border-left: 4px solid #4CAF50; }
+        .service-card:nth-child(4) { background: #1a1a1a; border-left: 4px solid #00BCD4; }
+        .service-card:nth-child(5) { background: #1a1a1a; border-left: 4px solid #9C27B0; }
+        .service-icon { font-size: 40px; margin-bottom: 25px; }
+        .service-card:nth-child(1) .service-icon { color: #ff8c00; }
+        .service-card:nth-child(2) .service-icon { color: #0088cc; }
+        .service-card:nth-child(3) .service-icon { color: #4CAF50; }
+        .service-card:nth-child(4) .service-icon { color: #00BCD4; }
+        .service-card:nth-child(5) .service-icon { color: #9C27B0; }
         .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 20px; }
         .service-card p { color: #aaa; font-size: 14px; }
 
-        .about { background: #000; padding: 80px 0; }
+        .how-we-work { background: #000; padding: 80px 0; }
+        .steps-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .step { flex: 1 1 250px; text-align: center; padding: 30px; border-radius: 12px; background: #111; border: 1px solid #222; }
+        .step-number { font-size: 48px; font-weight: 900; color: #ff8c00; margin-bottom: 15px; }
+        .step h3 { color: #fff; margin-bottom: 10px; }
+        .step p { color: #aaa; font-size: 14px; }
+
+        .about { background: #1a1000; padding: 80px 0; }
         .about .container { display: flex; align-items: flex-start; gap: 50px; flex-wrap: wrap; }
         .about-text { flex: 1; min-width: 280px; }
-        .about-text h2 { font-size: 32px; font-weight: 900; margin-bottom: 20px; color: #fff; }
-        .about-text p { color: #bbb; margin-bottom: 20px; font-size: 16px; }
+        .about-text h2 { font-size: 48px; font-weight: 900; margin-bottom: 30px; color: #ff8c00; text-transform: uppercase; }
+        .accordion { margin-bottom: 15px; border-radius: 8px; overflow: hidden; }
+        .accordion-header {
+            width: 100%; padding: 20px 25px; font-size: 20px; font-weight: bold; text-align: left;
+            background: rgba(255,140,0,0.08); border: 1px solid rgba(255,140,0,0.25); color: #ff8c00;
+            cursor: pointer; transition: background 0.3s; display: flex; justify-content: space-between; align-items: center;
+        }
+        .accordion-header:hover { background: rgba(255,140,0,0.15); }
+        .accordion-header i { transition: transform 0.3s; font-size: 16px; }
+        .accordion-body {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,140,0,0.1); border-top: none;
+            padding: 0 25px; color: #ccc; font-size: 16px; line-height: 1.7;
+        }
+        .accordion.active .accordion-body { max-height: 1500px; padding: 20px 25px; }
+        .accordion.active .accordion-header i { transform: rotate(180deg); }
         .about-image { flex: 1; min-width: 280px; }
-        .about-image img { width: 100%; border-radius: 8px; border: 1px solid #333; }
+        .about-image img { width: 100%; border-radius: 12px; border: 1px solid rgba(255,140,0,0.3); }
 
         .testimonials { background: #0a0a0a; padding: 80px 0; }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .testimonial-card {
-            background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;
-        }
+        .testimonial-card { background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222; }
         .testimonial-card .quote { font-style: italic; color: #ddd; margin-bottom: 20px; font-size: 15px; }
         .author-info strong { display: block; color: #fff; font-size: 16px; }
         .author-info span { color: #999; font-size: 13px; }
         .rating { color: #ff8c00; margin-bottom: 12px; }
 
         .contacts { background: #000; padding: 80px 0; }
-        .contact-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+        .contact-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
         .contact-card {
-            background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;
-            min-width: 250px; text-align: center;
+            flex: 1 1 280px; min-width: 250px; max-width: 350px;
+            background: #111; padding: 35px 25px; border-radius: 16px; text-align: center;
+            border: 1px solid #222; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            position: relative; overflow: hidden;
         }
-        .contact-card i { font-size: 30px; color: #ff8c00; margin-bottom: 15px; }
-        .contact-card a { color: #fff; text-decoration: none; font-size: 18px; font-weight: bold; display: block; margin: 8px 0; }
-        .contact-card .telegram-link { color: #0088cc; }
-        .contact-card .telegram-link i { color: #0088cc; }
+        .contact-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); border-color: #ff8c00; }
+        .contact-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; }
+        .contact-card:nth-child(1)::before { background: #ff8c00; }
+        .contact-card:nth-child(2)::before { background: #0088cc; }
+        .contact-card:nth-child(3)::before { background: #ff8c00; }
+        .contact-icon { font-size: 48px; margin-bottom: 20px; }
+        .contact-card:nth-child(1) .contact-icon { color: #ff8c00; }
+        .contact-card:nth-child(2) .contact-icon { color: #0088cc; }
+        .contact-card:nth-child(3) .contact-icon { color: #ff8c00; }
+        .contact-card h3 { color: #fff; margin-bottom: 20px; font-size: 22px; }
+        .contact-card a { color: #ccc; text-decoration: none; font-size: 18px; font-weight: 500; display: block; margin: 10px 0; transition: color 0.3s; }
+        .contact-card a:hover { color: #ff8c00; }
+        .contact-card .telegram-link { color: #0088cc; font-weight: bold; font-size: 20px; }
+        .contact-card .telegram-link:hover { color: #00aaff; }
 
         .order-form { background: #000; padding: 80px 0; }
-        .form-wrapper {
-            max-width: 700px; margin: 0 auto; background: #111; padding: 40px;
-            border-radius: 8px; border: 1px solid #222;
-        }
+        .form-wrapper { max-width: 700px; margin: 0 auto; background: #111; padding: 40px; border-radius: 12px; border: 1px solid #222; }
         .form-wrapper h2 { text-align: center; margin-bottom: 20px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; color: #ccc; font-weight: bold; }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 12px; background: #222; border: 1px solid #333;
-            border-radius: 6px; color: #fff; font-size: 16px;
-        }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; background: #222; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 16px; }
         .form-group input:focus, .form-group textarea:focus { border-color: #ff8c00; outline: none; }
         .form-group textarea { resize: vertical; min-height: 120px; }
         .form-wrapper .btn-orange { width: 100%; font-size: 18px; }
 
-        footer {
-            background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid #222;
-        }
+        footer { background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid #222; }
         footer p { color: #888; margin-bottom: 10px; }
         footer a { color: #ff8c00; text-decoration: none; }
 
+        /* === СВЕТЛАЯ ТЕМА === */
         body.light-theme { background: #f5f5f5; color: #222; }
-        body.light-theme .top-bar { background: #fff; border-bottom: 1px solid #ddd; }
+        body.light-theme .top-bar { background: #fff; border-bottom: 1px solid #eee; }
         body.light-theme .top-bar .phones a { color: #222; }
         body.light-theme .top-bar .info span { color: #555; }
-        body.light-theme .main-header { background: #fff; border-bottom: 1px solid #ddd; }
+        body.light-theme .main-header { background: #fff; border-bottom: 1px solid #eee; }
         body.light-theme .menu a { color: #555; }
         body.light-theme .menu a:hover { color: #ff8c00; }
-        body.light-theme .hero-left h1 { color: #111; }
-        body.light-theme .hero-left p { color: #333; }
+        body.light-theme .logo .yl { color: #000; }
+        body.light-theme .hero-left h1 { color: #fff; }
+        body.light-theme .hero-slogan .line1 { color: #fff; }
+        body.light-theme .hero-slogan .line2 { color: #ff8c00; }
+        body.light-theme .hero-slogan .line3 { color: #fff; }
+        body.light-theme .hero-left p { color: #bbb; }
         body.light-theme .section-title { color: #111; }
         body.light-theme .services { background: #fff; }
-        body.light-theme .service-card { background: #fafafa; border-color: #eee; }
+        body.light-theme .service-card { background: #fff; border-color: #eee; }
         body.light-theme .service-card h3 { color: #111; }
         body.light-theme .service-card p { color: #444; }
+        body.light-theme .how-we-work { background: #fff; }
+        body.light-theme .step { background: #fff; border-color: #eee; }
+        body.light-theme .step h3 { color: #111; }
+        body.light-theme .step p { color: #444; }
         body.light-theme .about { background: #fff; }
-        body.light-theme .about-text h2 { color: #111; }
-        body.light-theme .about-text p { color: #333; }
+        body.light-theme .about-text h2 { color: #ff8c00; }
+        body.light-theme .accordion-header { background: #fff; border-color: #ff8c00; color: #ff8c00; }
+        body.light-theme .accordion-body { background: #fff; color: #333; }
         body.light-theme .testimonials { background: #fff; }
-        body.light-theme .testimonial-card { background: #fafafa; border-color: #eee; }
+        body.light-theme .testimonial-card { background: #fff; border-color: #eee; }
         body.light-theme .testimonial-card .quote { color: #333; }
         body.light-theme .author-info strong { color: #111; }
         body.light-theme .author-info span { color: #555; }
         body.light-theme .contacts { background: #fff; }
-        body.light-theme .contact-card { background: #fafafa; border-color: #eee; }
-        body.light-theme .contact-card a { color: #111; }
+        body.light-theme .contact-card { background: #fff; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+        body.light-theme .contact-card:hover { border-color: #ff8c00; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        body.light-theme .contact-card h3 { color: #111; }
+        body.light-theme .contact-card a { color: #444; }
+        body.light-theme .contact-card a:hover { color: #ff8c00; }
+        body.light-theme .contact-card .telegram-link { color: #0088cc; }
+        body.light-theme .contact-card .telegram-link:hover { color: #00aaff; }
         body.light-theme .order-form { background: #fff; }
-        body.light-theme .form-wrapper { background: #fafafa; border-color: #eee; }
+        body.light-theme .form-wrapper { background: #fff; border-color: #eee; }
         body.light-theme .form-group label { color: #333; }
-        body.light-theme .form-group input,
-        body.light-theme .form-group textarea { background: #fff; border-color: #ddd; color: #111; }
-        body.light-theme footer { background: #fff; border-top: 1px solid #ddd; }
+        body.light-theme .form-group input, body.light-theme .form-group textarea { background: #fafafa; border-color: #ddd; color: #111; }
+        body.light-theme footer { background: #fff; border-top: 1px solid #eee; }
         body.light-theme footer p { color: #555; }
 
-        .theme-toggle {
-            background: none; border: none; color: inherit; cursor: pointer;
-            font-size: 22px; margin-left: 20px; vertical-align: middle;
-        }
+        .theme-toggle { background: none; border: none; color: inherit; cursor: pointer; font-size: 22px; margin-left: 20px; vertical-align: middle; }
         .theme-toggle:hover { color: #ff8c00; }
 
         @media (max-width: 768px) {
-            .hero-left h1 { font-size: 32px; }
+            .hero-slogan { font-size: 40px; }
             .menu a { font-size: 14px; }
             .main-header .container { justify-content: center; }
             .logo { font-size: 28px; }
+            .service-card { flex: 1 1 45%; min-width: 150px; }
+            .about-text h2 { font-size: 32px; }
+            .accordion-header { font-size: 18px; }
         }
     </style>
 </head>
@@ -204,11 +232,11 @@
 
 <header class="main-header">
     <div class="container">
-        <div class="logo"><span class="white">ЮЛМИ</span>-<span class="orange">ТРАНС</span></div>
+        <div class="logo"><span class="yl">ЮЛМИ</span>-<span class="trans">ТРАНС</span></div>
         <nav class="menu">
             <a href="#services">Услуги</a>
+            <a href="#how-we-work">Схема работы</a>
             <a href="#about">О компании</a>
-            <a href="#form">Калькулятор</a>
             <a href="#testimonials">Отзывы</a>
             <a href="#contacts">Контакты</a>
         </nav>
@@ -219,15 +247,17 @@
     <div class="container">
         <div class="hero-left">
             <h1>НАДЕЖНАЯ ДОСТАВКА ГРУЗОВ</h1>
-            <p><span class="highlight">Быстро. Вовремя. Всегда.</span></p>
+            <div class="hero-slogan">
+                <div class="line1">БЫСТРО.</div>
+                <div class="line2">ВОВРЕМЯ.</div>
+                <div class="line3">ВСЕГДА.</div>
+            </div>
             <p>Транспортная компания с 12-летним опытом. Доставляем грузы по России — от 100 кг до 20 тонн.</p>
             <div class="buttons">
                 <a href="#form" class="btn-orange">Рассчитать стоимость</a>
                 <a href="#services" class="btn-outline">Наши услуги</a>
+                <a href="https://t.me/yulmitrans" target="_blank" class="btn-orange btn-telegram"><i class="fab fa-telegram-plane"></i> Написать в Telegram</a>
             </div>
-        </div>
-        <div class="hero-right">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Грузовик">
         </div>
     </div>
 </section>
@@ -236,26 +266,23 @@
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-truck"></i></div>
-                <h3>Грузоперевозки по РФ</h3>
-                <p>Доставка любых грузов от 100 кг до 20 тонн по всей стране.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-                <h3>Северный завоз</h3>
-                <p>Надёжная доставка в районы Крайнего Севера и удалённые регионы.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-calculator"></i></div>
-                <h3>Расчёт стоимости</h3>
-                <p>Бесплатный расчёт маршрута и стоимости за 30 минут.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Страхование груза</h3>
-                <p>Полная финансовая защита на всём пути следования.</p>
-            </div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Грузоперевозки по РФ</h3><p>Доставка любых грузов от 100 кг до 20 тонн по всей стране.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-snowflake"></i></div><h3>Северный завоз</h3><p>Надёжная доставка в районы Крайнего Севера и удалённые регионы.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>Расчёт стоимости</h3><p>Бесплатный расчёт маршрута и стоимости за 30 минут.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h3>Страхование груза</h3><p>Полная финансовая защита на всём пути следования.</p></div>
+            <div class="service-card"><div class="service-icon"><i class="fas fa-weight-hanging"></i></div><h3>Негабаритные грузы</h3><p>Перевозка крупной техники, оборудования, металлоконструкций.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="how-we-work" id="how-we-work">
+    <div class="container">
+        <h2 class="section-title">Как мы работаем</h2>
+        <div class="steps-grid">
+            <div class="step"><div class="step-number">01</div><h3>Оставляете заявку</h3><p>Звоните, пишите в Telegram или заполняйте форму. Уточняем детали за 5 минут.</p></div>
+            <div class="step"><div class="step-number">02</div><h3>Расчёт стоимости</h3><p>Просчитываем маршрут и финальную цену. Никаких скрытых доплат.</p></div>
+            <div class="step"><div class="step-number">03</div><h3>Подача транспорта</h3><p>Назначаем машину под ваш груз. Забираем строго в оговорённое время.</p></div>
+            <div class="step"><div class="step-number">04</div><h3>Доставка до двери</h3><p>Груз прибывает в целости и сохранности. Вы получаете полный пакет документов.</p></div>
         </div>
     </div>
 </section>
@@ -263,12 +290,12 @@
 <section class="about" id="about">
     <div class="container">
         <div class="about-text">
-            <h2>О компании «ЮЛМИ-ТРАНС»</h2>
-            <p><strong>Быстрая, надёжная доставка грузов от 100 кг до 20 тонн по всей России, включая регионы Крайнего Севера.</strong> Принимаем сборный груз и негабарит, оформляем разрешения и сопроводительные документы. Любая форма оплаты, в том числе с НДС.</p>
-            <p><strong>Услуги для физических лиц:</strong> домашние переезды, переезды для военнослужащих, перевозка личных вещей, имущества, мебели, бытовой техники, перевозка легковых автомобилей.</p>
-            <p><strong>Услуги для юридических лиц:</strong> перевозка всех грузов от 100 кг в любую точку России, контейнерные перевозки, перевозки скоропортящихся грузов, продуктов с температурным режимом рефрижератором, доставка грузов в труднодоступные районы: Воркута, Усинск, ХМАО, ЯНАО.</p>
-            <p><strong>Услуга «Срочная доставка» отдельным транспортом:</strong> перевозка металла, металлолома, трубы, металлопроката, перевозка ж/д запчастей, включая колесные пары, перевозка леса, бруса, доски, пиломатериала, перевозка негабаритных грузов: строительная и сельскохозяйственная техника, промышленное оборудование, металлоконструкции, водные транспортные средства, электрические подстанции.</p>
-            <p><strong>Преимущества для клиентов:</strong> 100% гарантия сохранности вашего груза, страхование груза. Перевозка «от двери до двери» без склада и перегруза. Персональный менеджер контролирует перевозку, круглосуточная обратная связь. Помощь в организации погрузки и выгрузки с привлечением грузчиков и спецтехники. Оперативный документооборот: отчётные документы направим в течение 3-х дней. Система лояльности для постоянных клиентов.</p>
+            <h2>О компании</h2>
+            <div class="accordion"><button class="accordion-header">🚚 Быстрая, надёжная доставка грузов <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Доставка от 100 кг до 20 тонн по всей России, включая регионы Крайнего Севера. Принимаем сборный груз и негабарит, оформляем разрешения и сопроводительные документы. Любая форма оплаты, в том числе с НДС.</p></div></div>
+            <div class="accordion"><button class="accordion-header">👤 Услуги для физических лиц <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Домашние переезды, переезды для военнослужащих, перевозка личных вещей, имущества, мебели, бытовой техники, перевозка легковых автомобилей.</p></div></div>
+            <div class="accordion"><button class="accordion-header">🏢 Услуги для юридических лиц <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Перевозка всех грузов от 100 кг в любую точку России, контейнерные перевозки, перевозки скоропортящихся грузов, продуктов с температурным режимом рефрижератором. Доставка грузов в труднодоступные районы: Воркута, Усинск, ХМАО, ЯНАО.</p></div></div>
+            <div class="accordion"><button class="accordion-header">⚡ Услуга «Срочная доставка» отдельным транспортом <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>Перевозка металла, металлолома, трубы, металлопроката, перевозка ж/д запчастей, включая колесные пары, перевозка леса, бруса, доски, пиломатериала, перевозка негабаритных грузов: строительная и сельскохозяйственная техника, промышленное оборудование, металлоконструкции, водные транспортные средства, электрические подстанции.</p></div></div>
+            <div class="accordion"><button class="accordion-header">⭐ Преимущества для клиентов <i class="fas fa-chevron-down"></i></button><div class="accordion-body"><p>✅ 100% гарантия сохранности вашего груза, страхование груза.<br>✅ Перевозка «от двери до двери» без склада и перегруза.<br>✅ Персональный менеджер контролирует перевозку, круглосуточная обратная связь.<br>✅ Помощь в организации погрузки и выгрузки с привлечением грузчиков и спецтехники.<br>✅ Оперативный документооборот: отчётные документы направим в течение 3-х дней.<br>✅ Система лояльности для постоянных клиентов.</p></div></div>
         </div>
         <div class="about-image">
             <img src="https://i.ibb.co/W4dHTxzW/grok-image-1777317549487.jpg" alt="Наш транспорт">
@@ -296,20 +323,9 @@
     <div class="container">
         <h2 class="section-title">Контакты</h2>
         <div class="contact-grid">
-            <div class="contact-card">
-                <i class="fas fa-phone-alt"></i>
-                <a href="tel:89128887300">8 912 888-73-00</a>
-                <a href="tel:89128880042">8 912 888-00-42</a>
-                <a href="tel:89128884300">8 912 888-43-00</a>
-            </div>
-            <div class="contact-card">
-                <i class="fab fa-telegram-plane"></i>
-                <a href="https://t.me/yulmitrans" target="_blank" class="telegram-link">@yulmitrans</a>
-            </div>
-            <div class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:yulmitrans@mail.ru">yulmitrans@mail.ru</a>
-            </div>
+            <div class="contact-card"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><h3>Телефоны</h3><a href="tel:89128887300">8 912 888-73-00</a><a href="tel:89128880042">8 912 888-00-42</a><a href="tel:89128884300">8 912 888-43-00</a></div>
+            <div class="contact-card"><div class="contact-icon"><i class="fab fa-telegram-plane"></i></div><h3>Telegram</h3><a href="https://t.me/yulmitrans" target="_blank" class="telegram-link">@yulmitrans</a><p style="color:#888; margin-top:15px;">Оперативный ответ в мессенджере</p></div>
+            <div class="contact-card"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>Почта</h3><a href="mailto:yulmitrans@mail.ru">yulmitrans@mail.ru</a><p style="color:#888; margin-top:15px;">Для запросов и документов</p></div>
         </div>
     </div>
 </section>
@@ -319,15 +335,9 @@
         <div class="form-wrapper">
             <h2 class="section-title">Оставить заявку</h2>
             <p style="text-align:center; color:#ccc; margin-bottom:30px;">Укажите телефон и габариты груза — мы перезвоним до 15 минут</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="phone">Телефон *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required>
-                </div>
-                <div class="form-group">
-                    <label for="dimensions">Габариты и описание груза *</label>
-                    <textarea id="dimensions" name="dimensions" placeholder="Вес, размеры, объём, особенности" required></textarea>
-                </div>
+            <form action="https://formsubmit.co/ajax/yulmitrans@mail.ru" method="POST" id="contact-form">
+                <div class="form-group"><label for="phone">Телефон *</label><input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required></div>
+                <div class="form-group"><label for="dimensions">Габариты и описание груза *</label><textarea id="dimensions" name="dimensions" placeholder="Вес, размеры, объём, особенности" required></textarea></div>
                 <button type="submit" class="btn-orange">Отправить заявку</button>
             </form>
             <p id="form-status" style="text-align:center; margin-top:20px; color:#ff8c00;"></p>
@@ -343,17 +353,25 @@
 </footer>
 
 <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const parent = header.parentElement;
+            parent.classList.toggle('active');
+            document.querySelectorAll('.accordion').forEach(item => {
+                if (item !== parent) item.classList.remove('active');
+            });
+        });
+    });
+
     (function() {
         const body = document.body;
         const toggleBtn = document.getElementById('theme-toggle');
         const icon = toggleBtn.querySelector('i');
-
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
             body.classList.add('light-theme');
             icon.classList.replace('fa-moon', 'fa-sun');
         }
-
         toggleBtn.addEventListener('click', () => {
             body.classList.toggle('light-theme');
             const isLight = body.classList.contains('light-theme');
@@ -366,54 +384,29 @@
             }
         });
     })();
-</script>
 
-<script>
-    (function() {
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyUk3zRtmVZwM6EXA4bGWTYdG4PXg6nuPVNRBqB5a8XsS4x6ASXE1frQF0OeXjwuIFR/exec';
-
-        const form = document.getElementById('contact-form');
-        const status = document.getElementById('form-status');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const btn = form.querySelector('.btn-orange');
-            btn.disabled = true;
-            btn.textContent = 'Отправка...';
-
-            const phone = document.getElementById('phone').value.trim();
-            const dimensions = document.getElementById('dimensions').value.trim();
-
-            const data = { phone, dimensions };
-
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('Network error');
-                return response.json();
-            })
-            .then(result => {
-                if (result.success) {
-                    status.textContent = '✅ Заявка отправлена! Мы перезвоним.';
-                    form.reset();
-                } else {
-                    throw new Error('Server error');
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                status.textContent = '❌ Ошибка. Позвоните нам по телефону.';
-            })
-            .finally(() => {
-                btn.disabled = false;
-                btn.textContent = 'Отправить заявку';
-            });
-        });
-    })();
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const btn = form.querySelector(".btn-orange");
+        btn.disabled = true;
+        btn.textContent = "Отправка...";
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        fetch(form.action, { method: "POST", headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+        .then(r => r.json())
+        .then(result => {
+            if (result.success === "true") {
+                status.textContent = "✅ Заявка отправлена! Мы перезвоним.";
+                form.reset();
+            } else {
+                status.textContent = "❌ Ошибка. Попробуйте ещё раз.";
+            }
+        })
+        .catch(error => { status.textContent = "❌ Ошибка сети. Позвоните нам."; console.error(error); })
+        .finally(() => { btn.disabled = false; btn.textContent = "Отправить заявку"; });
+    });
 </script>
 
 </body>
