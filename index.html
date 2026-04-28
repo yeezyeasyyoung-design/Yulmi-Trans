@@ -16,7 +16,7 @@
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* === ТЁМНАЯ ТЕМА === */
+        /* ===== ТЁМНАЯ ТЕМА ===== */
         .top-bar { background: #111; padding: 12px 0; font-size: 15px; border-bottom: 1px solid #222; }
         .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .top-bar .phones a { color: #fff; text-decoration: none; margin-right: 20px; font-weight: bold; white-space: nowrap; }
@@ -60,14 +60,16 @@
         .service-card {
             flex: 1 1 200px; min-width: 180px; max-width: 220px;
             padding: 40px 20px; border-radius: 12px; text-align: center; border: 1px solid #222;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s; cursor: pointer; text-decoration: none; color: inherit;
         }
         .service-card:hover { transform: translateY(-5px); border-color: transparent; }
-        .service-card:nth-child(1) { background: #1a1a1a; border-left: 4px solid #ff8c00; }
-        .service-card:nth-child(2) { background: #1a1a1a; border-left: 4px solid #0088cc; }
-        .service-card:nth-child(3) { background: #1a1a1a; border-left: 4px solid #4CAF50; }
-        .service-card:nth-child(4) { background: #1a1a1a; border-left: 4px solid #00BCD4; }
-        .service-card:nth-child(5) { background: #1a1a1a; border-left: 4px solid #9C27B0; }
+        .service-card:nth-child(1) { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/d4pd2dS5/Screenshot-2026-04-28-19-55-30-447-com-android-chrome-edit.jpg') center/cover no-repeat; border-left: 4px solid #ff8c00; }
+        .service-card:nth-child(2) { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/TMMKvY96/Screenshot-2026-04-28-19-57-28-743-com-google-android-googlequicksearchbox-edit.jpg') center/cover no-repeat; border-left: 4px solid #0088cc; }
+        .service-card:nth-child(3) { background: #1a1a1a; border-left: 4px solid #4CAF50; position: relative; }
+        .service-card:nth-child(3)::after { content: "Нажмите 👆"; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #4CAF50; opacity: 0.8; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 0.5; transform: translateX(-50%) scale(1); } 50% { opacity: 1; transform: translateX(-50%) scale(1.05); } 100% { opacity: 0.5; transform: translateX(-50%) scale(1); } }
+        .service-card:nth-child(4) { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/ZRCLhFx7/grok-image-1777392009888.jpg') center/cover no-repeat; border-left: 4px solid #00BCD4; }
+        .service-card:nth-child(5) { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/27HkQx3w/Screenshot-2026-04-28-20-04-43-795-com-android-chrome-edit.jpg') center/cover no-repeat; border-left: 4px solid #9C27B0; }
         .service-icon { font-size: 40px; margin-bottom: 25px; }
         .service-card:nth-child(1) .service-icon { color: #ff8c00; }
         .service-card:nth-child(2) .service-icon { color: #0088cc; }
@@ -75,7 +77,7 @@
         .service-card:nth-child(4) .service-icon { color: #00BCD4; }
         .service-card:nth-child(5) .service-icon { color: #9C27B0; }
         .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 20px; }
-        .service-card p { color: #aaa; font-size: 14px; }
+        .service-card p { color: #ddd; font-size: 14px; }
 
         .how-we-work { background: #000; padding: 80px 0; }
         .steps-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
@@ -89,18 +91,10 @@
         .about-text { flex: 1; min-width: 280px; }
         .about-text h2 { font-size: 48px; font-weight: 900; margin-bottom: 30px; color: #ff8c00; text-transform: uppercase; }
         .accordion { margin-bottom: 15px; border-radius: 8px; overflow: hidden; }
-        .accordion-header {
-            width: 100%; padding: 20px 25px; font-size: 20px; font-weight: bold; text-align: left;
-            background: rgba(255,140,0,0.08); border: 1px solid rgba(255,140,0,0.25); color: #ff8c00;
-            cursor: pointer; transition: background 0.3s; display: flex; justify-content: space-between; align-items: center;
-        }
+        .accordion-header { width: 100%; padding: 20px 25px; font-size: 20px; font-weight: bold; text-align: left; background: rgba(255,140,0,0.08); border: 1px solid rgba(255,140,0,0.25); color: #ff8c00; cursor: pointer; transition: background 0.3s; display: flex; justify-content: space-between; align-items: center; }
         .accordion-header:hover { background: rgba(255,140,0,0.15); }
         .accordion-header i { transition: transform 0.3s; font-size: 16px; }
-        .accordion-body {
-            max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,140,0,0.1); border-top: none;
-            padding: 0 25px; color: #ccc; font-size: 16px; line-height: 1.7;
-        }
+        .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,140,0,0.1); border-top: none; padding: 0 25px; color: #ccc; font-size: 16px; line-height: 1.7; }
         .accordion.active .accordion-body { max-height: 1500px; padding: 20px 25px; }
         .accordion.active .accordion-header i { transform: rotate(180deg); }
         .about-image { flex: 1; min-width: 280px; }
@@ -114,7 +108,10 @@
         .author-info span { color: #999; font-size: 13px; }
         .rating { color: #ff8c00; margin-bottom: 12px; }
 
-        .contacts { background: #000; padding: 80px 0; }
+        .contacts {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat;
+            padding: 80px 0;
+        }
         .contact-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
         .contact-card {
             flex: 1 1 280px; min-width: 250px; max-width: 350px;
@@ -137,24 +134,36 @@
         .contact-card .telegram-link { color: #0088cc; font-weight: bold; font-size: 20px; }
         .contact-card .telegram-link:hover { color: #00aaff; }
 
-        /* ФОРМА */
         .order-form { background: #000; padding: 80px 0; }
         .form-wrapper { max-width: 700px; margin: 0 auto; background: #111; padding: 40px; border-radius: 12px; border: 1px solid #222; }
         .form-wrapper h2 { text-align: center; margin-bottom: 20px; }
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; position: relative; }
         .form-group label { display: block; margin-bottom: 8px; color: #ccc; font-weight: bold; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; background: #222; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 16px; }
-        .form-group input:focus, .form-group textarea:focus { border-color: #ff8c00; outline: none; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; background: #222; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 16px; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #ff8c00; outline: none; }
         .form-group textarea { resize: vertical; min-height: 100px; }
         .form-row { display: flex; gap: 15px; }
         .form-row .form-group { flex: 1; }
         .form-wrapper .btn-orange { width: 100%; font-size: 18px; }
+        .calc-result { text-align: center; padding: 20px; margin: 20px 0; background: rgba(255,140,0,0.1); border-radius: 12px; border: 1px solid #ff8c00; }
+        .calc-result h3 { color: #ff8c00; font-size: 24px; margin-bottom: 5px; }
+        .calc-result .disclaimer { color: rgba(255,255,255,0.4); font-size: 12px; margin-top: 10px; }
+        .autocomplete-list { position: absolute; top: 100%; left: 0; right: 0; max-height: 200px; overflow-y: auto; background: #1a1a1a; border: 1px solid #333; border-radius: 6px; z-index: 1000; display: none; }
+        .autocomplete-item { padding: 10px 15px; cursor: pointer; color: #ccc; font-size: 14px; }
+        .autocomplete-item:hover { background: #ff8c00; color: #000; }
+        .autocomplete-item i { margin-right: 8px; color: #888; }
+
+        .floating-buttons { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+        .floating-btn { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.3s; }
+        .floating-btn:hover { transform: scale(1.1); }
+        .floating-call { background: #ff8c00; }
+        .floating-telegram { background: #0088cc; }
 
         footer { background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid #222; }
         footer p { color: #888; margin-bottom: 10px; }
         footer a { color: #ff8c00; text-decoration: none; }
 
-        /* === СВЕТЛАЯ ТЕМА === */
+        /* ===== СВЕТЛАЯ ТЕМА ===== */
         body.light-theme { background: #f5f5f5; color: #222; }
         body.light-theme .top-bar { background: #fff; border-bottom: 1px solid #eee; }
         body.light-theme .top-bar .phones a { color: #222; }
@@ -170,14 +179,28 @@
         body.light-theme .hero-left p { color: #bbb; }
         body.light-theme .section-title { color: #111; }
         body.light-theme .services { background: #fff; }
-        body.light-theme .service-card { background: #fff; border-color: #eee; }
-        body.light-theme .service-card h3 { color: #111; }
-        body.light-theme .service-card p { color: #444; }
+        body.light-theme .service-card:nth-child(1) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/d4pd2dS5/Screenshot-2026-04-28-19-55-30-447-com-android-chrome-edit.jpg') center/cover no-repeat; border-color: #eee; }
+        body.light-theme .service-card:nth-child(1) h3, body.light-theme .service-card:nth-child(1) p { color: #111; }
+        body.light-theme .service-card:nth-child(1) .service-icon { color: #111; }
+        body.light-theme .service-card:nth-child(2) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/TMMKvY96/Screenshot-2026-04-28-19-57-28-743-com-google-android-googlequicksearchbox-edit.jpg') center/cover no-repeat; border-color: #eee; }
+        body.light-theme .service-card:nth-child(2) h3, body.light-theme .service-card:nth-child(2) p { color: #111; }
+        body.light-theme .service-card:nth-child(2) .service-icon { color: #111; }
+        body.light-theme .service-card:nth-child(3) { background: #fff; border-color: #4CAF50; }
+        body.light-theme .service-card:nth-child(3) h3, body.light-theme .service-card:nth-child(3) p { color: #111; }
+        body.light-theme .service-card:nth-child(3) .service-icon { color: #4CAF50; }
+        body.light-theme .service-card:nth-child(3)::after { color: #4CAF50; }
+        body.light-theme .service-card:nth-child(4) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/ZRCLhFx7/grok-image-1777392009888.jpg') center/cover no-repeat; border-color: #eee; }
+        body.light-theme .service-card:nth-child(4) h3, body.light-theme .service-card:nth-child(4) p { color: #111; }
+        body.light-theme .service-card:nth-child(4) .service-icon { color: #111; }
+        body.light-theme .service-card:nth-child(5) { background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://i.ibb.co/27HkQx3w/Screenshot-2026-04-28-20-04-43-795-com-android-chrome-edit.jpg') center/cover no-repeat; border-color: #eee; }
+        body.light-theme .service-card:nth-child(5) h3, body.light-theme .service-card:nth-child(5) p { color: #111; }
+        body.light-theme .service-card:nth-child(5) .service-icon { color: #111; }
+        body.light-theme .service-card { border-color: #eee; }
         body.light-theme .how-we-work { background: #fff; }
         body.light-theme .step { background: #fff; border-color: #eee; }
         body.light-theme .step h3 { color: #111; }
         body.light-theme .step p { color: #444; }
-        body.light-theme .about { background: #fff; }
+        body.light-theme .about { background: #fff5e6; }
         body.light-theme .about-text h2 { color: #ff8c00; }
         body.light-theme .accordion-header { background: #fff; border-color: #ff8c00; color: #ff8c00; }
         body.light-theme .accordion-body { background: #fff; color: #333; }
@@ -186,18 +209,22 @@
         body.light-theme .testimonial-card .quote { color: #333; }
         body.light-theme .author-info strong { color: #111; }
         body.light-theme .author-info span { color: #555; }
-        body.light-theme .contacts { background: #fff; }
+        body.light-theme .contacts { background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('https://i.ibb.co/XxmZSZyf/Screenshot-2026-04-28-19-19-58-473-com-android-chrome-edit.jpg') center/cover no-repeat; }
         body.light-theme .contact-card { background: #fff; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        body.light-theme .contact-card:hover { border-color: #ff8c00; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
         body.light-theme .contact-card h3 { color: #111; }
         body.light-theme .contact-card a { color: #444; }
         body.light-theme .contact-card a:hover { color: #ff8c00; }
         body.light-theme .contact-card .telegram-link { color: #0088cc; }
-        body.light-theme .contact-card .telegram-link:hover { color: #00aaff; }
         body.light-theme .order-form { background: #fff; }
         body.light-theme .form-wrapper { background: #fff; border-color: #eee; }
         body.light-theme .form-group label { color: #333; }
-        body.light-theme .form-group input, body.light-theme .form-group textarea { background: #fafafa; border-color: #ddd; color: #111; }
+        body.light-theme .form-group input, body.light-theme .form-group select, body.light-theme .form-group textarea { background: #fafafa; border-color: #ddd; color: #111; }
+        body.light-theme .autocomplete-list { background: #fff; border-color: #ddd; }
+        body.light-theme .autocomplete-item { color: #333; }
+        body.light-theme .autocomplete-item:hover { background: #ff8c00; color: #000; }
+        body.light-theme .calc-result { background: rgba(255,140,0,0.05); border-color: #ff8c00; }
+        body.light-theme .calc-result h3 { color: #ff8c00; }
+        body.light-theme .calc-result .disclaimer { color: rgba(0,0,0,0.4); }
         body.light-theme footer { background: #fff; border-top: 1px solid #eee; }
         body.light-theme footer p { color: #555; }
 
@@ -213,6 +240,7 @@
             .about-text h2 { font-size: 32px; }
             .accordion-header { font-size: 18px; }
             .form-row { flex-direction: column; }
+            .floating-buttons { bottom: 15px; right: 15px; }
         }
     </style>
 </head>
@@ -270,11 +298,11 @@
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Грузоперевозки по РФ</h3><p>Доставка любых грузов от 100 кг до 20 тонн по всей стране.</p></div>
-            <div class="service-card"><div class="service-icon"><i class="fas fa-snowflake"></i></div><h3>Северный завоз</h3><p>Надёжная доставка в районы Крайнего Севера и удалённые регионы.</p></div>
-            <div class="service-card"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>Расчёт стоимости</h3><p>Бесплатный расчёт маршрута и стоимости за 30 минут.</p></div>
-            <div class="service-card"><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h3>Страхование груза</h3><p>Полная финансовая защита на всём пути следования.</p></div>
-            <div class="service-card"><div class="service-icon"><i class="fas fa-weight-hanging"></i></div><h3>Негабаритные грузы</h3><p>Перевозка крупной техники, оборудования, металлоконструкций.</p></div>
+            <a href="#form" class="service-card"><div class="service-icon"><i class="fas fa-truck"></i></div><h3>Грузоперевозки по РФ</h3><p>Доставка любых грузов от 100 кг до 20 тонн по всей стране.</p></a>
+            <a href="#form" class="service-card"><div class="service-icon"><i class="fas fa-snowflake"></i></div><h3>Северный завоз</h3><p>Надёжная доставка в районы Крайнего Севера и удалённые регионы.</p></a>
+            <a href="#form" class="service-card"><div class="service-icon"><i class="fas fa-calculator"></i></div><h3>Расчёт стоимости</h3><p>Бесплатный расчёт маршрута и стоимости за 15 минут.</p></a>
+            <a href="#form" class="service-card"><div class="service-icon"><i class="fas fa-shield-alt"></i></div><h3>Страхование груза</h3><p>Полная финансовая защита на всём пути следования.</p></a>
+            <a href="#form" class="service-card"><div class="service-icon"><i class="fas fa-weight-hanging"></i></div><h3>Негабаритные грузы</h3><p>Перевозка крупной техники, оборудования, металлоконструкций.</p></a>
         </div>
     </div>
 </section>
@@ -337,47 +365,56 @@
 <section class="order-form" id="form">
     <div class="container">
         <div class="form-wrapper">
-            <h2 class="section-title">Оставить заявку</h2>
-            <p style="text-align:center; color:#ccc; margin-bottom:30px;">Укажите данные для примерного расчёта стоимости</p>
-            <form action="https://formsubmit.co/ajax/yulmitrans@mail.ru" method="POST" id="contact-form">
-                <!-- Телефон -->
+            <h2 class="section-title">Рассчитать стоимость</h2>
+            <p style="text-align:center; color:#ccc; margin-bottom:30px;">Введите города, вес и габариты — мы покажем примерную цену</p>
+            <div class="form-row">
+                <div class="form-group" id="from-group">
+                    <label for="from">Откуда *</label>
+                    <input type="text" id="from" placeholder="Например: Ижевск" required autocomplete="off">
+                    <div class="autocomplete-list" id="from-list"></div>
+                </div>
+                <div class="form-group" id="to-group">
+                    <label for="to">Куда *</label>
+                    <input type="text" id="to" placeholder="Например: Москва" required autocomplete="off">
+                    <div class="autocomplete-list" id="to-list"></div>
+                </div>
+            </div>
+            <div class="form-row">
                 <div class="form-group">
-                    <label for="phone">Телефон *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required>
+                    <label for="weight">Вес груза *</label>
+                    <input type="number" id="weight" placeholder="0" min="0.001" step="0.001" required>
                 </div>
-                <!-- Вес -->
                 <div class="form-group">
-                    <label for="weight">Вес груза (тонн) *</label>
-                    <input type="number" id="weight" name="weight" placeholder="Например: 5" min="0" step="0.1" required>
+                    <label for="unit">Ед. измерения</label>
+                    <select id="unit">
+                        <option value="t">Тонны</option>
+                        <option value="kg">Килограммы</option>
+                    </select>
                 </div>
-                <!-- Габариты (длина, ширина, высота) -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="length">Длина (м)</label>
-                        <input type="number" id="length" name="length" placeholder="0" min="0" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label for="width">Ширина (м)</label>
-                        <input type="number" id="width" name="width" placeholder="0" min="0" step="0.1">
-                    </div>
-                    <div class="form-group">
-                        <label for="height">Высота (м)</label>
-                        <input type="number" id="height" name="height" placeholder="0" min="0" step="0.1">
-                    </div>
-                </div>
-                <!-- Описание -->
-                <div class="form-group">
-                    <label for="description">Описание груза</label>
-                    <textarea id="description" name="description" placeholder="Что за груз, особенности, требования"></textarea>
-                </div>
-                <!-- Примерный расчёт стоимости -->
-                <div class="form-group">
-                    <label for="budget">Примерный расчёт стоимости (₽)</label>
-                    <input type="number" id="budget" name="budget" placeholder="Например: 50000" min="0" step="1000">
-                </div>
-                <button type="submit" class="btn-orange">Отправить заявку</button>
-            </form>
-            <p id="form-status" style="text-align:center; margin-top:20px; color:#ff8c00;"></p>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label for="length">Длина (м)</label><input type="number" id="length" placeholder="0" min="0" step="0.1"></div>
+                <div class="form-group"><label for="width">Ширина (м)</label><input type="number" id="width" placeholder="0" min="0" step="0.1"></div>
+                <div class="form-group"><label for="height">Высота (м)</label><input type="number" id="height" placeholder="0" min="0" step="0.1"></div>
+            </div>
+            <button type="button" class="btn-orange" onclick="calculatePrice()" style="margin-bottom:20px;">Рассчитать стоимость</button>
+            <div id="calc-result" class="calc-result" style="display:none;">
+                <h3 id="price-display">Примерная стоимость: 0 ₽</h3>
+                <p class="disclaimer">Не является публичной офертой. Точную стоимость уточняйте у менеджера.</p>
+            </div>
+            <div id="order-section" style="display:none;">
+                <form action="https://formsubmit.co/ajax/yulmitrans@mail.ru" method="POST" id="contact-form">
+                    <input type="hidden" name="from" id="from_hidden">
+                    <input type="hidden" name="to" id="to_hidden">
+                    <input type="hidden" name="weight" id="weight_hidden">
+                    <input type="hidden" name="dimensions" id="dimensions_hidden">
+                    <input type="hidden" name="calculated_price" id="calculated_price">
+                    <div class="form-group"><label for="phone">Телефон *</label><input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required></div>
+                    <div class="form-group"><label for="description">Описание груза</label><textarea id="description" name="description" placeholder="Что за груз, особенности, требования"></textarea></div>
+                    <button type="submit" class="btn-orange">Отправить заявку</button>
+                </form>
+                <p id="form-status" style="text-align:center; margin-top:20px; color:#ff8c00;"></p>
+            </div>
         </div>
     </div>
 </section>
@@ -389,7 +426,114 @@
     </div>
 </footer>
 
+<div class="floating-buttons">
+    <a href="https://t.me/yulmitrans" target="_blank" class="floating-btn floating-telegram" title="Написать в Telegram"><i class="fab fa-telegram-plane"></i></a>
+    <a href="tel:89128887300" class="floating-btn floating-call" title="Позвонить"><i class="fas fa-phone-alt"></i></a>
+</div>
+
 <script>
+    let searchTimer;
+    function setupAutocomplete(inputId, listId) {
+        const input = document.getElementById(inputId);
+        const list = document.getElementById(listId);
+        input.addEventListener('input', function() {
+            clearTimeout(searchTimer);
+            const query = this.value.trim();
+            if (query.length < 2) { list.style.display = 'none'; return; }
+            searchTimer = setTimeout(async () => {
+                try {
+                    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&countrycodes=ru&format=json&limit=6`;
+                    const response = await fetch(url, { headers: { 'User-Agent': 'YulmiTransCalculator' } });
+                    const data = await response.json();
+                    if (data.length === 0) { list.style.display = 'none'; return; }
+                    list.innerHTML = data.map(place => {
+                        const city = place.display_name.split(',')[0];
+                        const region = place.display_name.split(',').slice(1, 3).join(',').trim();
+                        return `<div class="autocomplete-item" data-lat="${place.lat}" data-lon="${place.lon}">
+                            <i class="fas fa-map-marker-alt"></i> ${city}, ${region}
+                        </div>`;
+                    }).join('');
+                    list.style.display = 'block';
+                } catch (e) { list.style.display = 'none'; }
+            }, 400);
+        });
+        list.addEventListener('click', function(e) {
+            const item = e.target.closest('.autocomplete-item');
+            if (item) {
+                input.value = item.textContent.replace(/^\s*/, '').split(',')[0];
+                input.setAttribute('data-lat', item.getAttribute('data-lat'));
+                input.setAttribute('data-lon', item.getAttribute('data-lon'));
+                list.style.display = 'none';
+            }
+        });
+        document.addEventListener('click', function(e) {
+            if (!input.parentElement.contains(e.target)) list.style.display = 'none';
+        });
+    }
+
+    setupAutocomplete('from', 'from-list');
+    setupAutocomplete('to', 'to-list');
+
+    function haversineDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                  Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c;
+    }
+
+    function calculatePrice() {
+        const fromInput = document.getElementById('from');
+        const toInput = document.getElementById('to');
+        let weight = parseFloat(document.getElementById('weight').value) || 0;
+        const unit = document.getElementById('unit').value;
+        const length = parseFloat(document.getElementById('length').value) || 0;
+        const width = parseFloat(document.getElementById('width').value) || 0;
+        const height = parseFloat(document.getElementById('height').value) || 0;
+
+        const fromLat = fromInput.getAttribute('data-lat');
+        const fromLon = fromInput.getAttribute('data-lon');
+        const toLat = toInput.getAttribute('data-lat');
+        const toLon = toInput.getAttribute('data-lon');
+
+        if (!fromLat || !toLat || weight <= 0) {
+            alert('Выберите города из выпадающего списка и укажите вес.');
+            return;
+        }
+
+        if (unit === 'kg') weight = weight / 1000;
+        const distance = Math.round(haversineDistance(fromLat, fromLon, toLat, toLon));
+
+        let rate;
+        if (distance <= 500) rate = 22;
+        else if (distance <= 1000) rate = 17;
+        else if (distance <= 2000) rate = 12;
+        else if (distance <= 4000) rate = 9;
+        else rate = 6;
+
+        if (weight <= 1) rate *= 1.2;
+        else if (weight >= 15) rate *= 0.8;
+
+        let sizeCoef = 1;
+        if ((length + width + height) > 6) sizeCoef = 1.15;
+
+        let price = Math.round(distance * rate * weight * sizeCoef);
+        price = Math.round(price / 1000) * 1000;
+
+        document.getElementById('price-display').textContent = 'Примерная стоимость: ' + price.toLocaleString() + ' ₽';
+        document.getElementById('calc-result').style.display = 'block';
+        document.getElementById('order-section').style.display = 'block';
+
+        document.getElementById('from_hidden').value = fromInput.value;
+        document.getElementById('to_hidden').value = toInput.value;
+        document.getElementById('weight_hidden').value = weight;
+        document.getElementById('dimensions_hidden').value = `${length}x${width}x${height}`;
+        document.getElementById('calculated_price').value = price;
+    }
+
     document.querySelectorAll('.accordion-header').forEach(header => {
         header.addEventListener('click', () => {
             const parent = header.parentElement;
@@ -405,20 +549,12 @@
         const toggleBtn = document.getElementById('theme-toggle');
         const icon = toggleBtn.querySelector('i');
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.add('light-theme');
-            icon.classList.replace('fa-moon', 'fa-sun');
-        }
+        if (savedTheme === 'light') { body.classList.add('light-theme'); icon.classList.replace('fa-moon', 'fa-sun'); }
         toggleBtn.addEventListener('click', () => {
             body.classList.toggle('light-theme');
             const isLight = body.classList.contains('light-theme');
-            if (isLight) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('theme', 'dark');
-            }
+            if (isLight) { icon.classList.replace('fa-moon', 'fa-sun'); localStorage.setItem('theme', 'light'); }
+            else { icon.classList.replace('fa-sun', 'fa-moon'); localStorage.setItem('theme', 'dark'); }
         });
     })();
 
@@ -434,12 +570,8 @@
         fetch(form.action, { method: "POST", headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
         .then(r => r.json())
         .then(result => {
-            if (result.success === "true") {
-                status.textContent = "✅ Заявка отправлена! Мы перезвоним.";
-                form.reset();
-            } else {
-                status.textContent = "❌ Ошибка. Попробуйте ещё раз.";
-            }
+            if (result.success === "true") { status.textContent = "✅ Заявка отправлена! Мы перезвоним."; form.reset(); }
+            else { status.textContent = "❌ Ошибка. Попробуйте ещё раз."; }
         })
         .catch(error => { status.textContent = "❌ Ошибка сети. Позвоните нам."; console.error(error); })
         .finally(() => { btn.disabled = false; btn.textContent = "Отправить заявку"; });
