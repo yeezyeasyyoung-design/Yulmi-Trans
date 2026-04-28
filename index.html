@@ -137,6 +137,7 @@
         .contact-card .telegram-link { color: #0088cc; font-weight: bold; font-size: 20px; }
         .contact-card .telegram-link:hover { color: #00aaff; }
 
+        /* ФОРМА */
         .order-form { background: #000; padding: 80px 0; }
         .form-wrapper { max-width: 700px; margin: 0 auto; background: #111; padding: 40px; border-radius: 12px; border: 1px solid #222; }
         .form-wrapper h2 { text-align: center; margin-bottom: 20px; }
@@ -144,7 +145,9 @@
         .form-group label { display: block; margin-bottom: 8px; color: #ccc; font-weight: bold; }
         .form-group input, .form-group textarea { width: 100%; padding: 12px; background: #222; border: 1px solid #333; border-radius: 6px; color: #fff; font-size: 16px; }
         .form-group input:focus, .form-group textarea:focus { border-color: #ff8c00; outline: none; }
-        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: flex; gap: 15px; }
+        .form-row .form-group { flex: 1; }
         .form-wrapper .btn-orange { width: 100%; font-size: 18px; }
 
         footer { background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid #222; }
@@ -209,6 +212,7 @@
             .service-card { flex: 1 1 45%; min-width: 150px; }
             .about-text h2 { font-size: 32px; }
             .accordion-header { font-size: 18px; }
+            .form-row { flex-direction: column; }
         }
     </style>
 </head>
@@ -334,10 +338,43 @@
     <div class="container">
         <div class="form-wrapper">
             <h2 class="section-title">Оставить заявку</h2>
-            <p style="text-align:center; color:#ccc; margin-bottom:30px;">Укажите телефон и габариты груза — мы перезвоним до 15 минут</p>
+            <p style="text-align:center; color:#ccc; margin-bottom:30px;">Укажите данные для примерного расчёта стоимости</p>
             <form action="https://formsubmit.co/ajax/yulmitrans@mail.ru" method="POST" id="contact-form">
-                <div class="form-group"><label for="phone">Телефон *</label><input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required></div>
-                <div class="form-group"><label for="dimensions">Габариты и описание груза *</label><textarea id="dimensions" name="dimensions" placeholder="Вес, размеры, объём, особенности" required></textarea></div>
+                <!-- Телефон -->
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required>
+                </div>
+                <!-- Вес -->
+                <div class="form-group">
+                    <label for="weight">Вес груза (тонн) *</label>
+                    <input type="number" id="weight" name="weight" placeholder="Например: 5" min="0" step="0.1" required>
+                </div>
+                <!-- Габариты (длина, ширина, высота) -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="length">Длина (м)</label>
+                        <input type="number" id="length" name="length" placeholder="0" min="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="width">Ширина (м)</label>
+                        <input type="number" id="width" name="width" placeholder="0" min="0" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Высота (м)</label>
+                        <input type="number" id="height" name="height" placeholder="0" min="0" step="0.1">
+                    </div>
+                </div>
+                <!-- Описание -->
+                <div class="form-group">
+                    <label for="description">Описание груза</label>
+                    <textarea id="description" name="description" placeholder="Что за груз, особенности, требования"></textarea>
+                </div>
+                <!-- Примерный расчёт стоимости -->
+                <div class="form-group">
+                    <label for="budget">Примерный расчёт стоимости (₽)</label>
+                    <input type="number" id="budget" name="budget" placeholder="Например: 50000" min="0" step="1000">
+                </div>
                 <button type="submit" class="btn-orange">Отправить заявку</button>
             </form>
             <p id="form-status" style="text-align:center; margin-top:20px; color:#ff8c00;"></p>
