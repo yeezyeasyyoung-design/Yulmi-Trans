@@ -171,6 +171,12 @@
         .autocomplete-item:hover { background: #ff8c00; color: #000; }
         .autocomplete-item i { margin-right: 8px; color: #888; }
 
+        /* Чекбокс согласия */
+        .checkbox-group { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #ccc; }
+        .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: #ff8c00; cursor: pointer; }
+        .checkbox-group a { color: #ff8c00; text-decoration: underline; }
+        .checkbox-group a:hover { color: #fff; }
+
         .floating-buttons { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
         .floating-btn { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.3s; }
         .floating-btn:hover { transform: scale(1.1); }
@@ -230,6 +236,8 @@
         body.light-theme .calc-result { background: rgba(255,140,0,0.05); border-color: #ff8c00; }
         body.light-theme .calc-result h3 { color: #ff8c00; }
         body.light-theme .calc-result .disclaimer { color: rgba(0,0,0,0.4); }
+        body.light-theme .checkbox-group { color: #555; }
+        body.light-theme .checkbox-group a { color: #ff8c00; }
         body.light-theme footer { background: #fff; border-top: 1px solid #eee; }
         body.light-theme footer p { color: #555; }
 
@@ -414,6 +422,15 @@
                     <input type="hidden" name="calculated_price" id="calculated_price">
                     <div class="form-group"><label for="phone">Телефон *</label><input type="tel" id="phone" name="phone" placeholder="+7 900 123-45-67" required></div>
                     <div class="form-group"><label for="description">Описание груза</label><textarea id="description" name="description" placeholder="Что за груз, особенности, требования"></textarea></div>
+                    
+                    <!-- Галочка согласия -->
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="privacy" required>
+                            Я согласен на <a href="/privacy.html" target="_blank">обработку персональных данных</a> и принимаю условия <a href="/privacy.html" target="_blank">политики конфиденциальности</a>
+                        </label>
+                    </div>
+                    
                     <button type="submit" class="btn-orange">Отправить заявку</button>
                 </form>
                 <p id="form-status" style="text-align:center; margin-top:20px; color:#ff8c00;"></p>
@@ -567,8 +584,17 @@
 
     const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
+    const privacyCheckbox = document.getElementById('privacy');
+
     form.addEventListener("submit", function(e) {
         e.preventDefault();
+        
+        // Проверка, что галка согласия отмечена
+        if (!privacyCheckbox.checked) {
+            status.textContent = "❌ Пожалуйста, подтвердите согласие на обработку данных.";
+            return;
+        }
+
         const btn = form.querySelector(".btn-orange");
         btn.disabled = true;
         btn.textContent = "Отправка...";
