@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24">
+  <!-- кабина -->
+  <rect x="2" y="4" width="8" height="10" rx="1" fill="#ff8c00" />
+  <!-- окно -->
+  <rect x="3" y="5" width="6" height="5" rx="0.5" fill="#fff" />
+  <!-- фара -->
+  <circle cx="2" cy="9" r="1.5" fill="#ffff00" />
+  <!-- кузов -->
+  <rect x="10" y="2" width="16" height="13" rx="1" fill="#555" />
+  <!-- переднее колесо -->
+  <circle cx="8" cy="18" r="3" fill="#222" />
+  <circle cx="8" cy="18" r="1.5" fill="#888" />
+  <!-- заднее колесо -->
+  <circle cx="22" cy="18" r="3" fill="#222" />
+  <circle cx="22" cy="18" r="1.5" fill="#888" />
+</svg>
